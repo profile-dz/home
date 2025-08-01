@@ -31,3 +31,58 @@ if (list) {
   window.addEventListener('resize', resync);
   resync();
 }
+
+// MOBILE MENU FUNCTIONALITY
+function toggleMobileMenu() {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    
+    hamburger.classList.toggle('active');
+    navMenu.classList.toggle('active');
+    
+    // Prevent body scroll when menu is open
+    const isOpen = navMenu.classList.contains('active');
+    document.body.style.overflow = isOpen ? 'hidden' : '';
+    document.body.classList.toggle('menu-open', isOpen);
+}
+
+// Close mobile menu when clicking outside
+document.addEventListener('click', function(event) {
+    const hamburger = document.querySelector('.hamburger');
+    const navMenu = document.querySelector('nav ul');
+    
+    if (!hamburger.contains(event.target) && !navMenu.contains(event.target)) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
+    }
+});
+
+// Close mobile menu when clicking on a link
+document.querySelectorAll('nav ul li a').forEach(link => {
+    link.addEventListener('click', () => {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.style.overflow = '';
+        document.body.classList.remove('menu-open');
+    });
+});
+
+// Keyboard support for mobile menu
+document.addEventListener('keydown', function(e) {
+    if (e.key === 'Escape') {
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('nav ul');
+        
+        if (navMenu.classList.contains('active')) {
+            hamburger.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            document.body.classList.remove('menu-open');
+        }
+    }
+});

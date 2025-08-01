@@ -19,11 +19,22 @@
     </head>
         
     <body>
+        <!-- Mobile Menu Toggle -->
+        <div class="mobile-menu-toggle">
+            <button class="hamburger" onclick="toggleMobileMenu()">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+
         <header>
             <nav>
                 <div class="nav-brand">
-                    <img class="logo" src="assets/logo/Logo 3 blue.png" alt="ProFile Logo">
-                    <h1 class="title">ProFile</h1>
+                    <a href="index.html" class="brand-link">
+                        <img class="logo" src="assets/logo/Logo 3 blue.png" alt="ProFile Logo">
+                        <h1 class="title">ProFile</h1>
+                    </a>
                 </div>
                 <ul>
                     <li><a href="services.html">Services</a></li>
@@ -36,7 +47,8 @@
         <main>
             <section class="hero">
                 <div class="hero-left">
-                    <img class="slogan" src="assets/images/slogan.png" alt="ProFile Slogan">
+                    <img class="slogan slogan-desktop" src="assets/images/slogan.png" alt="ProFile Slogan">
+                    <img class="slogan slogan-mobile" src="assets/images/slogan.png" alt="ProFile Slogan Mobile">
                     <a class="cta" href="services.html">Get Started</a>
                 </div>
                 <div class="hero-right">
