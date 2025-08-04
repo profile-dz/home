@@ -97,23 +97,83 @@
 
             <!-- Desktop Portfolio -->
             <section class="portfolio-desktop">
-                <img src="assets/images/test.jpg" alt="Portfolio Showcase" />
+                <div class="portfolio-container">
+                    <div class="portfolio-slider">
+                        <div class="slider-container">
+                            <div class="slide active">
+                                <div class="slide-content">
+                                    <img src="assets/images/Scholarship before.jpeg" alt="Bad CV" />
+                                </div>
+                            </div>
+                            <div class="slide">
+                                <div class="slide-content">
+                                    <img src="assets/images/CV illustration.jpg" alt="Better CV" />
+                                </div>
+                            </div>
+                        </div>
+                        <div class="slider-controls">
+                            <button class="slider-btn prev" onclick="changeDesktopSlide(-1)">‹</button>
+                            <div class="slider-dots">
+                                <span class="dot active" onclick="currentDesktopSlide(1)"></span>
+                                <span class="dot" onclick="currentDesktopSlide(2)"></span>
+                            </div>
+                            <button class="slider-btn next" onclick="changeDesktopSlide(1)">›</button>
+                        </div>
+                    </div>
+                    <div class="portfolio-content">
+                        <div class="content-slide active">
+                            <h2>Stuck in the Pile</h2>
+                            <p>This is the CV that disappears.</p>
+                            <p>Messy formatting.</p>
+                            <p>Weak words.</p>
+                            <p>No personality.</p>
+                            <p>It doesn’t say <em>who you are</em> or <em>what you can do</em>.</p>
+                            <p>Recruiters barely look.</p>
+                            <p>It's just... another file in the stack.</p>                            
+                        </div>
+                        <div class="content-slide">
+                            <h2>The ProFile Difference</h2>
+                            <p>This isn’t just a CV — it's your story.</p>
+                            <p>Designed by experts.</p>
+                            <p>Approved by recruiters.</p>
+                            <p>Optimized for ATS systems.</p>
+                            <p>It speaks in results, not clichés.</p>
+                            <p>Clean, modern, and tailored to <em>you</em>.</p>
+                            <p>With <strong>ProFile</strong>, your first impression becomes unforgettable.</p>
+                            
+                        </div>
+                    </div>
+                </div>
             </section>
 
-            <!-- Mobile Carousel -->
-            <section class="portfolio-carousel">
-                <ul class="cv-cards">
-                    <li data-active="true">
-                        <article>
-                            <img src="assets/images/test.jpg" alt="Bad CV" />
-                        </article>
-                    </li>
-                    <li>
-                        <article>
-                            <img src="assets/images/test.jpg" alt="Better CV" />
-                        </article>
-                    </li>
-                </ul>
+            <!-- Mobile Portfolio -->
+            <section class="portfolio-mobile">
+                <div class="mobile-title">
+                    <h2 class="title-slide active">Basic CV</h2>
+                    <h2 class="title-slide">ProFile CV</h2>
+                </div>
+                <div class="portfolio-slider">
+                    <div class="slider-container">
+                        <div class="slide active">
+                            <div class="slide-content">
+                                <img src="assets/images/Scholarship before.jpeg" alt="Bad CV" />
+                            </div>
+                        </div>
+                        <div class="slide">
+                            <div class="slide-content">
+                                <img src="assets/images/CV illustration.jpg" alt="Better CV" />
+                            </div>
+                        </div>
+                    </div>
+                    <div class="slider-controls">
+                        <button class="slider-btn prev" onclick="changeMobileSlide(-1)">‹</button>
+                        <div class="slider-dots">
+                            <span class="dot active" onclick="currentMobileSlide(1)"></span>
+                            <span class="dot" onclick="currentMobileSlide(2)"></span>
+                        </div>
+                        <button class="slider-btn next" onclick="changeMobileSlide(1)">›</button>
+                    </div>
+                </div>
             </section>
 
             <!-- Section 4: Why Choose Us -->
@@ -123,31 +183,31 @@
                     <div class="features-grid">
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <i class="fa-solid fa-robot"></i>
+                                <i class="fa-solid fa-user"></i>
                             </div>
-                            <h3>AI-Enhanced Headshots</h3>
-                            <p>Professional headshots optimized with AI for maximum impact and clarity.</p>
+                            <h3>Personalised for You</h3>
+                            <p>Every CV and letter is crafted to fit your goals and industry.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <i class="fa-solid fa-file-lines"></i>
+                                <i class="fa-solid fa-thumbs-up"></i>
                             </div>
-                            <h3>ATS-Optimized CVs</h3>
-                            <p>Resumes designed to pass Applicant Tracking Systems and get you noticed.</p>
+                            <h3>Recruiter & ATS Approved</h3>
+                            <p>We follow global CV rules to help you pass the 6-second test.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <i class="fa-solid fa-envelope"></i>
+                                <i class="fa-solid fa-clock"></i>
                             </div>
-                            <h3>Tailored Motivation Letters</h3>
-                            <p>Personalized letters that capture your unique story and career goals.</p>
+                            <h3>Fast & Responsive</h3>
+                            <p>Get results within 4 hours. No delays.</p>
                         </div>
                         <div class="feature-card">
                             <div class="feature-icon">
-                                <i class="fa-brands fa-linkedin"></i>
+                                <i class="fa-solid fa-smile"></i>
                             </div>
-                            <h3>Professional LinkedIn Makeovers</h3>
-                            <p>Transform your LinkedIn profile into a powerful career networking tool.</p>
+                            <h3>Proven Results</h3>
+                            <p>Students and job seekers land interviews in Algeria and abroad.</p>
                         </div>
                     </div>
                 </div>
@@ -161,7 +221,7 @@
                         <div class="step">
                             <div class="step-number">1</div>
                             <h3>Submit your request</h3>
-                            <p>Tell us what you need and your career goals</p>
+                            <p>Tell us what you need and your career goals by filling out the appropriate form.</p>
                         </div>
                         <div class="step">
                             <div class="step-number">2</div>
@@ -183,38 +243,33 @@
                     <h2 class="section-title">What They Say About Us</h2>
                     <div class="testimonials-grid">
                         <div class="testimonial-card">
-                            <div class="quote">"ProFile transformed my CV and helped me land my dream job!"</div>
+                            <div class="quote">"I sent over 20 CVs before using ProFile — not a single reply. After updating my CV with them, I got two interviews in the same week. I didn’t change my degree… just the way I presented it."</div>
                             <div class="testimonial-info">
-                                <div class="avatar">AB</div>
                                 <div class="details">
-                                    <h4>Ahmed B.</h4>
-                                    <p>CV Service</p>
+                                    <h4>Yasmine H., Master's Student – Université d'Oran</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="testimonial-card">
-                            <div class="quote">"My LinkedIn profile now gets me 10x more opportunities."</div>
+                            <div class="quote">"I was stuck with an ugly Word CV from university. ProFile transformed it completely. I used the same info — but now it looks like something a recruiter actually reads. I even passed an ATS filter on a French site."</div>
                             <div class="testimonial-info">
-                                <div class="avatar">SM</div>
                                 <div class="details">
-                                    <h4>Sarah M.</h4>
-                                    <p>LinkedIn Makeover</p>
+                                    <h4>Khalil B., Computer Science Graduate – USTO</h4>
                                 </div>
                             </div>
                         </div>
                         <div class="testimonial-card">
-                            <div class="quote">"Professional, fast, and exactly what I needed for my application."</div>
+                            <div class="quote">"I’m not good with words, so I never knew how to explain what I do. ProFile helped me describe my experience in a way that impressed the HR. Now I work at a better company with better pay."</div>
                             <div class="testimonial-info">
-                                <div class="avatar">JK</div>
                                 <div class="details">
-                                    <h4>John K.</h4>
-                                    <p>Motivation Letter</p>
+                                    <h4>Bilal M., Mechanical Technician – Béjaïa</h4>
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </section>
+            
 
 
         </main>
@@ -252,7 +307,6 @@
                         <ul>
                             <li><a href="#about">About</a></li>
                             <li><a href="#services">Services</a></li>
-                            <li><a href="#portfolio">Portfolio</a></li>
                             <li><a href="#contact">Contact</a></li>
                         </ul>
                     </div>
@@ -262,7 +316,6 @@
                             <li><a href="#resume">Resume Writing</a></li>
                             <li><a href="#letter">Motivation Letters</a></li>
                             <li><a href="#linkedin">LinkedIn Makeover</a></li>
-                            <li><a href="#headshots">AI Headshots</a></li>
                         </ul>
                     </div>
                 </div>

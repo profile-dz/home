@@ -1,37 +1,4 @@
 
-// Card Expander Carousel Logic for .cv-cards
-const list = document.querySelector('.cv-cards');
-if (list) {
-  const items = list.querySelectorAll('li');
-  const setIndex = (event) => {
-    const closest = event.target.closest('li');
-    if (closest) {
-      const index = [...items].indexOf(closest);
-      const cols = new Array(list.children.length)
-        .fill()
-        .map((_, i) => {
-          items[i].dataset.active = (index === i).toString();
-          return index === i ? '10fr' : '1fr';
-        })
-        .join(' ');
-      list.style.setProperty('grid-template-columns', cols);
-    }
-  };
-  list.addEventListener('focus', setIndex, true);
-  list.addEventListener('click', setIndex);
-  list.addEventListener('pointermove', setIndex);
-  const resync = () => {
-    const w = Math.max(
-      ...[...items].map((i) => {
-        return i.offsetWidth;
-      })
-    );
-    list.style.setProperty('--article-width', w);
-  };
-  window.addEventListener('resize', resync);
-  resync();
-}
-
 // MOBILE MENU FUNCTIONALITY
 function toggleMobileMenu() {
     const hamburger = document.querySelector('.hamburger');
@@ -45,6 +12,99 @@ function toggleMobileMenu() {
     document.body.style.overflow = isOpen ? 'hidden' : '';
     document.body.classList.toggle('menu-open', isOpen);
 }
+
+// DESKTOP PORTFOLIO SLIDER FUNCTIONALITY
+let desktopSlideIndex = 0;
+const desktopSlides = document.querySelector('.portfolio-desktop .slide');
+const desktopDots = document.querySelectorAll('.portfolio-desktop .dot');
+const contentSlides = document.querySelectorAll('.content-slide');
+
+function showDesktopSlide(index) {
+    // Hide all desktop slides
+    document.querySelectorAll('.portfolio-desktop .slide').forEach(slide => slide.classList.remove('active'));
+    desktopDots.forEach(dot => dot.classList.remove('active'));
+    contentSlides.forEach(slide => slide.classList.remove('active'));
+    
+    // Show current desktop slide
+    const currentSlide = document.querySelectorAll('.portfolio-desktop .slide')[index];
+    if (currentSlide) {
+        currentSlide.classList.add('active');
+    }
+    if (desktopDots[index]) {
+        desktopDots[index].classList.add('active');
+    }
+    if (contentSlides[index]) {
+        contentSlides[index].classList.add('active');
+    }
+}
+
+function changeDesktopSlide(direction) {
+    desktopSlideIndex += direction;
+    
+    // Only allow 2 slides (0 and 1)
+    if (desktopSlideIndex >= 2) {
+        desktopSlideIndex = 0;
+    }
+    if (desktopSlideIndex < 0) {
+        desktopSlideIndex = 1;
+    }
+    
+    showDesktopSlide(desktopSlideIndex);
+}
+
+function currentDesktopSlide(index) {
+    desktopSlideIndex = index - 1;
+    showDesktopSlide(desktopSlideIndex);
+}
+
+// MOBILE PORTFOLIO SLIDER FUNCTIONALITY
+let mobileSlideIndex = 0;
+const mobileSlides = document.querySelectorAll('.portfolio-mobile .slide');
+const mobileDots = document.querySelectorAll('.portfolio-mobile .dot');
+const titleSlides = document.querySelectorAll('.title-slide');
+
+function showMobileSlide(index) {
+    // Hide all mobile slides
+    mobileSlides.forEach(slide => slide.classList.remove('active'));
+    mobileDots.forEach(dot => dot.classList.remove('active'));
+    titleSlides.forEach(slide => slide.classList.remove('active'));
+    
+    // Show current mobile slide
+    if (mobileSlides[index]) {
+        mobileSlides[index].classList.add('active');
+    }
+    if (mobileDots[index]) {
+        mobileDots[index].classList.add('active');
+    }
+    if (titleSlides[index]) {
+        titleSlides[index].classList.add('active');
+    }
+}
+
+function changeMobileSlide(direction) {
+    mobileSlideIndex += direction;
+    
+    // Only allow 2 slides (0 and 1)
+    if (mobileSlideIndex >= 2) {
+        mobileSlideIndex = 0;
+    }
+    if (mobileSlideIndex < 0) {
+        mobileSlideIndex = 1;
+    }
+    
+    showMobileSlide(mobileSlideIndex);
+}
+
+function currentMobileSlide(index) {
+    mobileSlideIndex = index - 1;
+    showMobileSlide(mobileSlideIndex);
+}
+
+// Initialize sliders
+document.addEventListener('DOMContentLoaded', function() {
+    showDesktopSlide(0);
+    showMobileSlide(0);
+});
 
 // Close mobile menu when clicking outside
 document.addEventListener('click', function(event) {
