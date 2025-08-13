@@ -1,350 +1,418 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>ProFile</title>
-        <meta name="description" content="Everything .. starts with ProFile.">
-        <link rel="icon" href="assets/logo/Logo round.png" type="image/png">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-        <link rel="stylesheet" href="styles/style.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-    </head>
-        
-    <body>
-        <!-- Mobile Menu Toggle -->
-        <div class="mobile-menu-toggle">
-            <button class="hamburger" onclick="toggleMobileMenu()">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>ProFile</title>
+    <meta name="description" content="Everything .. starts with ProFile." />
+    <link rel="icon" href="assets/logo/Logo round.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+    <link rel="stylesheet" href="styles/tailwind.formatted.css" />
+    <script
+      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"
+      defer="defer"
+    ></script>
+  </head>
+
+  <body>
+    <!-- Mobile Menu Toggle -->
+    <div class="mobile-menu-toggle">
+      <button class="hamburger" onclick="toggleMobileMenu()">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+
+    <header>
+      <nav>
+        <div class="nav-brand">
+          <a href="index.html" class="brand-link">
+            <img
+              class="logo"
+              src="assets/logo/Logo 3 blue.png"
+              alt="ProFile Logo"
+            />
+            <h1 class="title" data-i18n="brand">ProFile</h1>
+          </a>
+        </div>
+        <ul>
+          <li><a href="#services" data-i18n="nav_services">Services</a></li>
+          <li><a href="#about" data-i18n="nav_about">About</a></li>
+          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+        </ul>
+        <div class="lang-switcher">
+          <button id="lang-en" class="lang-btn active">EN</button>
+          <button id="lang-fr" class="lang-btn">FR</button>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero" id="about">
+        <div class="hero-left">
+          <img
+            class="slogan slogan-desktop"
+            src="assets/images/slogan.png"
+            alt="ProFile Slogan"
+          />
+          <img
+            class="slogan slogan-mobile"
+            src="assets/images/slogan-mobile.png"
+            alt="ProFile Slogan Mobile"
+          />
+          <a class="cta" href="about.html" data-i18n="hero_cta">Learn More</a>
+        </div>
+        <div class="hero-right">
+          <img
+            class="illustration"
+            src="assets/images/hero section illustration.svg"
+            alt="ProFile Illustration"
+          />
+        </div>
+      </section>
+
+      <section class="creative-cards" id="services">
+        <div class="container">
+          <div class="row">
+            <div class="card-column">
+              <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+                <div class="card-details">
+                  <div class="card-icons">
+                    <img
+                      class="light-icon"
+                      src="assets/icons/cv.svg"
+                      alt="icon"
+                    />
+                  </div>
+                  <h3 data-i18n="card_resume_title">Resume</h3>
+                  <p data-i18n="card_resume_desc">
+                    Get a professional resume crafted to match your goals. We
+                    highlight your skills, experience, and strengths with design
+                    and clarity that gets you noticed.
+                  </p>
+                  <div class="read-more-btn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="card-column">
+              <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+                <div class="card-details">
+                  <div class="card-icons">
+                    <img
+                      class="light-icon"
+                      src="assets/icons/letter.svg"
+                      alt="icon"
+                    />
+                  </div>
+                  <h3 data-i18n="card_letter_title">Motivation Letter</h3>
+                  <p data-i18n="card_letter_desc">
+                    Make a strong impression with a personalized letter that
+                    captures who you are and why you're the perfect fit. clear,
+                    confident, and authentic.
+                  </p>
+                  <div class="read-more-btn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+            <div class="card-column">
+              <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+                <div class="card-details">
+                  <div class="card-icons">
+                    <img
+                      class="light-icon"
+                      src="assets/icons/profile.svg"
+                      alt="icon"
+                    />
+                  </div>
+                  <h3 data-i18n="card_linkedin_title">LinkedIn Profile</h3>
+                  <p data-i18n="card_linkedin_desc">
+                    Turn your LinkedIn into a powerful career tool. We help you
+                    structure your profile, choose the right keywords, and build
+                    a strong personal brand.
+                  </p>
+                  <div class="read-more-btn">
+                    <i class="fa-solid fa-arrow-right"></i>
+                  </div>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Section 4: Why Choose Us -->
+      <section class="why-choose-us">
+        <div class="container">
+          <h2 class="section-title" data-i18n="why_choose_title">
+            Why Choose ProFile?
+          </h2>
+          <div class="features-grid">
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-user"></i>
+              </div>
+              <h3 data-i18n="feature1_title">Personalised for You</h3>
+              <p data-i18n="feature1_desc">
+                Every CV and letter is crafted to fit your goals and industry.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-thumbs-up"></i>
+              </div>
+              <h3 data-i18n="feature2_title">Recruiter & ATS Approved</h3>
+              <p data-i18n="feature2_desc">
+                We follow global CV rules to help you pass the 6-second test.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-clock"></i>
+              </div>
+              <h3 data-i18n="feature3_title">Fast & Responsive</h3>
+              <p data-i18n="feature3_desc">
+                Get results within 4 hours. No delays.
+              </p>
+            </div>
+            <div class="feature-card">
+              <div class="feature-icon">
+                <i class="fa-solid fa-smile"></i>
+              </div>
+              <h3 data-i18n="feature4_title">Proven Results</h3>
+              <p data-i18n="feature4_desc">
+                Students and job seekers land interviews in Algeria and abroad.
+              </p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section
+        class="relative py-24 overflow-hidden"
+        x-data="{ active: 'introduction' }"
+      >
+        <div class="container px-4 mx-auto">
+          <div class="mb-12 md:max-w-4xl text-center mx-auto">
+            <h2
+              class="font-heading text-7xl lg:text-8xl text-white tracking-tighter-xl"
+            >
+              Our Work
+            </h2>
+          </div>
+          <ul class="mb-20 flex flex-wrap justify-center">
+            <li>
+              <a
+                class="inline-block px-5 py-5 font-medium text-green-300 tracking-tighter border border-green-400 rounded-full transition duration-200 text-green-400"
+                x-on:click.prevent="active = 'introduction'"
+                :class="{'text-green-400 border-green-400': active === 'introduction', 'text-gray-300 border-transparent': active !== 'introduction'}"
+                href="#"
+                >Introduction</a
+              >
+            </li>
+            <li>
+              <a
+                class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
+                x-on:click.prevent="active = 'aggregation'"
+                :class="{'text-green-400 border-green-400': active === 'aggregation', 'text-gray-300 border-transparent': active !== 'aggregation'}"
+                href="#"
+                >Aggregation</a
+              >
+            </li>
+            <li>
+              <a
+                class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
+                x-on:click.prevent="active = 'integrations'"
+                :class="{'text-green-400 border-green-400': active === 'integrations', 'text-gray-300 border-transparent': active !== 'integrations'}"
+                href="#"
+                >Integrations</a
+              >
+            </li>
+          </ul>
+          <img
+            class="mx-auto"
+            :class="{ 'hidden': active != 'introduction' }"
+            src="assets/images/slogan.png"
+            alt=""
+          /><img
+            class="hidden mx-auto"
+            :class="{ 'hidden': active != 'aggregation' }"
+            src="assets/images/slogan.png"
+            alt=""
+          /><img
+            class="hidden mx-auto"
+            :class="{ 'hidden': active != 'integrations' }"
+            src="assets/images/slogan.png"
+            alt=""
+          />
+        </div>
+      </section>
+
+      <!-- Section 5: How It Works -->
+      <section class="how-it-works" id="contact">
+        <div class="container">
+          <h2 class="section-title" data-i18n="how_title">How It Works</h2>
+          <div class="steps-container">
+            <div class="step">
+              <div class="step-number">1</div>
+              <h3 data-i18n="how_step1_title">Submit your request</h3>
+              <p data-i18n="how_step1_desc">
+                Tell us what you need and your career goals by filling out the
+                appropriate form.
+              </p>
+            </div>
+            <div class="step">
+              <div class="step-number">2</div>
+              <h3 data-i18n="how_step2_title">We contact you</h3>
+              <p data-i18n="how_step2_desc">
+                We'll reach out to discuss your requirements
+              </p>
+            </div>
+            <div class="step">
+              <div class="step-number">3</div>
+              <h3 data-i18n="how_step3_title">
+                Get your professional documents
+              </h3>
+              <p data-i18n="how_step3_desc">
+                Receive your polished, professional materials
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="services-cta">
+          <a href="#services" class="services-btn" data-i18n="get_started"
+            >Get Started</a
+          >
+        </div>
+      </section>
+    </main>
+
+    <!-- Section 8: Footer -->
+    <footer class="footer">
+      <div class="footer-container">
+        <!-- Brand Section -->
+        <div class="footer-brand">
+          <div class="brand-info">
+            <img
+              src="assets/logo/Logo 3.png"
+              alt="ProFile Logo"
+              class="footer-logo"
+            />
+            <h3 data-i18n="brand">ProFile</h3>
+            <p class="brand-slogan" data-i18n="footer_slogan">
+              "Everything.. starts with a profile."
+            </p>
+          </div>
+          <div class="social-links">
+            <a
+              href="https://wa.me/YOUR_NUMBER"
+              class="social-link"
+              aria-label="Email"
+            >
+              <i class="fa-solid fa-envelope"></i>
+            </a>
+            <a
+              href="mailto:contact@profile.com"
+              class="social-link"
+              aria-label="TikTok"
+            >
+              <i class="fa-brands fa-tiktok"></i>
+            </a>
+            <a
+              href="https://instagram.com/profile"
+              class="social-link"
+              aria-label="Instagram"
+            >
+              <i class="fa-brands fa-instagram"></i>
+            </a>
+            <a
+              href="https://www.facebook.com/profile.php?id=61578142722578"
+              class="social-link"
+              aria-label="Facebook"
+            >
+              <i class="fa-brands fa-facebook"></i>
+            </a>
+          </div>
         </div>
 
-        <header>
-            <nav>
-                <div class="nav-brand">
-                    <a href="index.html" class="brand-link">
-                        <img class="logo" src="assets/logo/Logo 3 blue.png" alt="ProFile Logo">
-                        <h1 class="title">ProFile</h1>
-                    </a>
-                </div>
-                <ul>
-                    <li><a href="services.html">Services</a></li>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                </ul>
-            </nav>
-        </header>
+        <!-- Links Section -->
+        <div class="footer-links">
+          <div class="link-group">
+            <h4 data-i18n="footer_company">Agency</h4>
+            <ul>
+              <li><a href="#about" data-i18n="nav_about">About</a></li>
+              <li><a href="#services" data-i18n="nav_services">Services</a></li>
+              <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="link-group">
+            <h4 data-i18n="footer_services">Services</h4>
+            <ul>
+              <li>
+                <a href="#resume" data-i18n="footer_resume">Resume Writing</a>
+              </li>
+              <li>
+                <a href="#letter" data-i18n="footer_letter"
+                  >Motivation Letters</a
+                >
+              </li>
+              <li>
+                <a href="#linkedin" data-i18n="footer_linkedin"
+                  >LinkedIn Makeover</a
+                >
+              </li>
+            </ul>
+          </div>
+        </div>
 
-        <main>
-            <section class="hero">
-                <div class="hero-left">
-                    <img class="slogan slogan-desktop" src="assets/images/slogan.png" alt="ProFile Slogan">
-                    <img class="slogan slogan-mobile" src="assets/images/slogan-mobile.png" alt="ProFile Slogan Mobile">
-                    <a class="cta" href="about.html">Learn More</a>
-                </div>
-                <div class="hero-right">
-                    <img class="illustration" src="assets/images/hero section illustration.svg" alt="ProFile Illustration">
-                </div>
-            </section>
-
-            <section class="creative-cards">
-                <div class="container">
-                    <div class="row">
-                        <div class="card-column">
-                            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
-                                <div class="card-details">
-                                    <div class="card-icons">
-                                        <img class="light-icon" src="assets/icons/cv.svg" alt="icon" />
-                                    </div>
-                                    <h3>Resume</h3>
-                                    <p>Get a professional resume crafted to match your goals. We highlight your skills, experience, and strengths with design and clarity that gets you noticed.</p>
-                                    <div class="read-more-btn"><i class="fa-solid fa-angles-right"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-column">
-                            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
-                                <div class="card-details">
-                                    <div class="card-icons">
-                                        <img class="light-icon" src="assets/icons/letter.svg" alt="icon" />
-                                    </div>
-                                    <h3>Motivation Letter</h3>
-                                    <p>Make a strong impression with a personalized letter that captures who you are and why you're the perfect fit. clear, confident, and authentic.</p>
-                                    <div class="read-more-btn"><i class="fa-solid fa-angles-right"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                        <div class="card-column">
-                            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
-                                <div class="card-details">
-                                    <div class="card-icons">
-                                        <img class="light-icon" src="assets/icons/profile.svg" alt="icon" />
-                                    </div>
-                                    <h3>LinkedIn Profile</h3>
-                                    <p>Turn your LinkedIn into a powerful career tool. We help you structure your profile, choose the right keywords, and build a strong personal brand.</p>
-                                    <div class="read-more-btn"><i class="fa-solid fa-angles-right"></i></div>
-                                </div>
-                            </a>
-                        </div>
-                    </div>
-                    <div class="services-cta">
-                        <a href="services.html" class="services-btn">View All Services</a>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Desktop Portfolio -->
-            <section class="portfolio-desktop">
-                <div class="portfolio-container">
-                    <div class="portfolio-slider">
-                        <div class="slider-container">
-                            <div class="slide active">
-                                <div class="slide-content">
-                                    <img src="assets/images/Scholarship before.jpeg" alt="Bad CV" />
-                                </div>
-                            </div>
-                            <div class="slide">
-                                <div class="slide-content">
-                                    <img src="assets/images/CV illustration.jpg" alt="Better CV" />
-                                </div>
-                            </div>
-                        </div>
-                        <div class="slider-controls">
-                            <button class="slider-btn prev" onclick="changeDesktopSlide(-1)">‹</button>
-                            <div class="slider-dots">
-                                <span class="dot active" onclick="currentDesktopSlide(1)"></span>
-                                <span class="dot" onclick="currentDesktopSlide(2)"></span>
-                            </div>
-                            <button class="slider-btn next" onclick="changeDesktopSlide(1)">›</button>
-                        </div>
-                    </div>
-                    <div class="portfolio-content">
-                        <div class="content-slide active">
-                            <h2>Stuck in the Pile</h2>
-                            <p>This is the CV that disappears.</p>
-                            <p>Messy formatting.</p>
-                            <p>Weak words.</p>
-                            <p>No personality.</p>
-                            <p>It doesn’t say <em>who you are</em> or <em>what you can do</em>.</p>
-                            <p>Recruiters barely look.</p>
-                            <p>It's just... another file in the stack.</p>                            
-                        </div>
-                        <div class="content-slide">
-                            <h2>The ProFile Difference</h2>
-                            <p>This isn’t just a CV — it's your story.</p>
-                            <p>Designed by experts.</p>
-                            <p>Approved by recruiters.</p>
-                            <p>Optimized for ATS systems.</p>
-                            <p>It speaks in results, not clichés.</p>
-                            <p>Clean, modern, and tailored to <em>you</em>.</p>
-                            <p>With <strong>ProFile</strong>, your first impression becomes unforgettable.</p>
-                            
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Mobile Portfolio -->
-            <section class="portfolio-mobile">
-                <div class="mobile-title">
-                    <h2 class="title-slide active">Basic CV</h2>
-                    <h2 class="title-slide">ProFile CV</h2>
-                </div>
-                <div class="portfolio-slider">
-                    <div class="slider-container">
-                        <div class="slide active">
-                            <div class="slide-content">
-                                <img src="assets/images/Scholarship before.jpeg" alt="Bad CV" />
-                            </div>
-                        </div>
-                        <div class="slide">
-                            <div class="slide-content">
-                                <img src="assets/images/CV illustration.jpg" alt="Better CV" />
-                            </div>
-                        </div>
-                    </div>
-                    <div class="slider-controls">
-                        <button class="slider-btn prev" onclick="changeMobileSlide(-1)">‹</button>
-                        <div class="slider-dots">
-                            <span class="dot active" onclick="currentMobileSlide(1)"></span>
-                            <span class="dot" onclick="currentMobileSlide(2)"></span>
-                        </div>
-                        <button class="slider-btn next" onclick="changeMobileSlide(1)">›</button>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 4: Why Choose Us -->
-            <section class="why-choose-us">
-                <div class="container">
-                    <h2 class="section-title">Why Choose ProFile?</h2>
-                    <div class="features-grid">
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-user"></i>
-                            </div>
-                            <h3>Personalised for You</h3>
-                            <p>Every CV and letter is crafted to fit your goals and industry.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-thumbs-up"></i>
-                            </div>
-                            <h3>Recruiter & ATS Approved</h3>
-                            <p>We follow global CV rules to help you pass the 6-second test.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-clock"></i>
-                            </div>
-                            <h3>Fast & Responsive</h3>
-                            <p>Get results within 4 hours. No delays.</p>
-                        </div>
-                        <div class="feature-card">
-                            <div class="feature-icon">
-                                <i class="fa-solid fa-smile"></i>
-                            </div>
-                            <h3>Proven Results</h3>
-                            <p>Students and job seekers land interviews in Algeria and abroad.</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 5: How It Works -->
-            <section class="how-it-works">
-                <div class="container">
-                    <h2 class="section-title">How It Works</h2>
-                    <div class="steps-container">
-                        <div class="step">
-                            <div class="step-number">1</div>
-                            <h3>Submit your request</h3>
-                            <p>Tell us what you need and your career goals by filling out the appropriate form.</p>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">2</div>
-                            <h3>We contact you</h3>
-                            <p>We'll reach out to discuss your requirements</p>
-                        </div>
-                        <div class="step">
-                            <div class="step-number">3</div>
-                            <h3>Get your professional documents</h3>
-                            <p>Receive your polished, professional materials</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- Section 6: Testimonials -->
-            <section class="testimonials">
-                <div class="container">
-                    <h2 class="section-title">What They Say About Us</h2>
-                    <div class="testimonials-grid">
-                        <div class="testimonial-card">
-                            <div class="quote">"I sent over 20 CVs before using ProFile — not a single reply. After updating my CV with them, I got two interviews in the same week. I didn’t change my degree… just the way I presented it."</div>
-                            <div class="testimonial-info">
-                                <div class="details">
-                                    <h4>Yasmine H., Master's Student – Université d'Oran</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="quote">"I was stuck with an ugly Word CV from university. ProFile transformed it completely. I used the same info — but now it looks like something a recruiter actually reads. I even passed an ATS filter on a French site."</div>
-                            <div class="testimonial-info">
-                                <div class="details">
-                                    <h4>Khalil B., Computer Science Graduate – USTO</h4>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="testimonial-card">
-                            <div class="quote">"I’m not good with words, so I never knew how to explain what I do. ProFile helped me describe my experience in a way that impressed the HR. Now I work at a better company with better pay."</div>
-                            <div class="testimonial-info">
-                                <div class="details">
-                                    <h4>Bilal M., Mechanical Technician – Béjaïa</h4>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-            
-
-
-        </main>
-
-        <!-- Section 8: Footer -->
-        <footer class="footer">
-            <div class="footer-container">
-                <!-- Brand Section -->
-                <div class="footer-brand">
-                    <div class="brand-info">
-                        <img src="assets/logo/Logo 3.png" alt="ProFile Logo" class="footer-logo">
-                        <h3>ProFile</h3>
-                        <p class="brand-slogan">"Everything.. starts with a profile."</p>
-                    </div>
-                    <div class="social-links">
-                        <a href="https://wa.me/YOUR_NUMBER" class="social-link" aria-label="Email">
-                            <i class="fa-solid fa-envelope"></i>
-                        </a>
-                        <a href="mailto:contact@profile.com" class="social-link" aria-label="TikTok">
-                            <i class="fa-brands fa-tiktok"></i>
-                        </a>
-                        <a href="https://instagram.com/profile" class="social-link" aria-label="Instagram">
-                            <i class="fa-brands fa-instagram"></i>
-                        </a>
-                        <a href="https://linkedin.com/company/profile" class="social-link" aria-label="Facebook">
-                            <i class="fa-brands fa-facebook"></i>
-                        </a>
-                    </div>
-                </div>
-
-                <!-- Links Section -->
-                <div class="footer-links">
-                    <div class="link-group">
-                        <h4>Company</h4>
-                        <ul>
-                            <li><a href="#about">About</a></li>
-                            <li><a href="#services">Services</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div>
-                    <div class="link-group">
-                        <h4>Services</h4>
-                        <ul>
-                            <li><a href="#resume">Resume Writing</a></li>
-                            <li><a href="#letter">Motivation Letters</a></li>
-                            <li><a href="#linkedin">LinkedIn Makeover</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Newsletter Section -->
-                <div class="footer-newsletter">
-                    <h4>Stay Updated</h4>
-                    <p>Get free tips and insights about career development and professional growth.</p>
-                    <div class="newsletter-form">
-                        <div class="input-group">
-                            <input type="email" placeholder="Enter your email" class="newsletter-input" required>
-                            <button type="submit" class="newsletter-btn">
-                                <i class="fa-solid fa-paper-plane"></i>
-                            </button>
-                        </div>
-                        <p class="privacy-note">We respect your privacy. Unsubscribe anytime.</p>
-                    </div>
-                </div>
+        <!-- Newsletter Section -->
+        <div class="footer-newsletter">
+          <h4 data-i18n="footer_newsletter">Stay Updated</h4>
+          <p data-i18n="footer_newsletter_desc">
+            Get free tips and insights about career development and professional
+            growth.
+          </p>
+          <div class="newsletter-form">
+            <div class="input-group">
+              <input
+                type="email"
+                placeholder="Enter your email"
+                class="newsletter-input"
+                required
+                data-i18n-placeholder="footer_email_placeholder"
+              />
+              <button type="submit" class="newsletter-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
             </div>
+            <p class="privacy-note" data-i18n="footer_privacy">
+              We respect your privacy. Unsubscribe anytime.
+            </p>
+          </div>
+        </div>
+      </div>
 
-            <!-- Bottom Bar -->
-            <div class="footer-bottom">
-                <div class="footer-bottom-content">
-                    <p>&copy; 2025 ProFile. All rights reserved.</p>
-                    <p>Built with ❤️ by Nacer</p>
-                </div>
-            </div>
-        </footer>
+      <!-- Bottom Bar -->
+      <div class="footer-bottom">
+        <div class="footer-bottom-content">
+          <p data-i18n="footer_copyright">
+            &copy; 2025 ProFile. All rights reserved.
+          </p>
+        </div>
+      </div>
+    </footer>
 
-        <script src="scripts/main.js"></script>
-    </body>
+    <script src="scripts/main.js"></script>
+  </body>
 </html>
