@@ -357,3 +357,17 @@ document.addEventListener('keydown', function(e) {
         }
     }
 });
+
+(function() {
+  emailjs.init('L_JtyoBvSOqKCxWJ0'); // <-- Replace with your EmailJS user ID
+})();
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  emailjs.sendForm('service_la277p9', 'template_evejkdn', this)
+    .then(function() {
+      document.getElementById('contact-success').style.display = 'block';
+      document.getElementById('contactForm').reset();
+    }, function(error) {
+      alert('Failed to send message. Please try again later.');
+    });
+});

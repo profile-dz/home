@@ -1,418 +1,433 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>ProFile</title>
-    <meta name="description" content="Everything .. starts with ProFile." />
-    <link rel="icon" href="assets/logo/Logo round.png" type="image/png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="styles/style.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
-    />
-    <link rel="stylesheet" href="styles/tailwind.formatted.css" />
-    <script
-      src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js"
-      defer="defer"
-    ></script>
-  </head>
 
-  <body>
-    <!-- Mobile Menu Toggle -->
-    <div class="mobile-menu-toggle">
-      <button class="hamburger" onclick="toggleMobileMenu()">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-    </div>
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProFile</title>
+  <meta name="description" content="Everything .. starts with ProFile." />
+  <link rel="icon" href="assets/logo/Logo round.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/tailwind.formatted.css" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer="defer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
 
-    <header>
-      <nav>
-        <div class="nav-brand">
-          <a href="index.html" class="brand-link">
-            <img
-              class="logo"
-              src="assets/logo/Logo 3 blue.png"
-              alt="ProFile Logo"
-            />
-            <h1 class="title" data-i18n="brand">ProFile</h1>
+<body>
+  <!-- Mobile Menu Toggle -->
+  <div class="mobile-menu-toggle">
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <header>
+    <nav>
+      <div class="nav-brand">
+        <a href="index.html" class="brand-link">
+          <img class="logo" src="assets/logo/Logo 3 blue.png" alt="ProFile Logo" />
+          <h1 class="title" data-i18n="brand">ProFile</h1>
+        </a>
+      </div>
+      <ul>
+        <li><a href="#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="#about" data-i18n="nav_about">About</a></li>
+        <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button id="lang-en" class="lang-btn active">EN</button>
+        <button id="lang-fr" class="lang-btn">FR</button>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <!-- Section 1: Hero -->
+    <section class="hero">
+      <div class="hero-left">
+        <img class="slogan slogan-desktop" src="assets/images/slogan.png" alt="ProFile Slogan" />
+        <img class="slogan slogan-mobile" src="assets/images/slogan-mobile.png" alt="ProFile Slogan Mobile" />
+        <a class="cta" href="about.html" data-i18n="hero_cta">Learn More</a>
+      </div>
+      <div class="hero-right">
+        <img class="illustration" src="assets/images/hero section illustration.svg" alt="ProFile Illustration" />
+      </div>
+    </section>
+
+    <!-- Section 2: services -->
+    <section class="creative-cards" id="services">
+      <div class="container">
+        <div class="row">
+          <div class="card-column">
+            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+              <div class="card-details">
+                <div class="card-icons">
+                  <img class="light-icon" src="assets/icons/cv.svg" alt="icon" />
+                </div>
+                <h3 data-i18n="card_resume_title">Resume</h3>
+                <p data-i18n="card_resume_desc">
+                  Get a professional resume crafted to match your goals. We
+                  highlight your skills, experience, and strengths with design
+                  and clarity that gets you noticed.
+                </p>
+                <div class="read-more-btn">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card-column">
+            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+              <div class="card-details">
+                <div class="card-icons">
+                  <img class="light-icon" src="assets/icons/letter.svg" alt="icon" />
+                </div>
+                <h3 data-i18n="card_letter_title">Motivation Letter</h3>
+                <p data-i18n="card_letter_desc">
+                  Make a strong impression with a personalized letter that
+                  captures who you are and why you're the perfect fit. clear,
+                  confident, and authentic.
+                </p>
+                <div class="read-more-btn">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+          <div class="card-column">
+            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+              <div class="card-details">
+                <div class="card-icons">
+                  <img class="light-icon" src="assets/icons/profile.svg" alt="icon" />
+                </div>
+                <h3 data-i18n="card_linkedin_title">LinkedIn Profile</h3>
+                <p data-i18n="card_linkedin_desc">
+                  Turn your LinkedIn into a powerful career tool. We help you
+                  structure your profile, choose the right keywords, and build
+                  a strong personal brand.
+                </p>
+                <div class="read-more-btn">
+                  <i class="fa-solid fa-arrow-right"></i>
+                </div>
+              </div>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 3: Why Choose Us -->
+    <section class="why-choose-us">
+      <div class="container">
+        <h2 class="section-title" data-i18n="why_choose_title">
+          Why Choose ProFile?
+        </h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-user"></i>
+            </div>
+            <h3 data-i18n="feature1_title">Personalised for You</h3>
+            <p data-i18n="feature1_desc">
+              Every CV and letter is crafted to fit your goals and industry.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-thumbs-up"></i>
+            </div>
+            <h3 data-i18n="feature2_title">Recruiter & ATS Approved</h3>
+            <p data-i18n="feature2_desc">
+              We follow global CV rules to help you pass the 6-second test.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-clock"></i>
+            </div>
+            <h3 data-i18n="feature3_title">Fast & Responsive</h3>
+            <p data-i18n="feature3_desc">
+              Get results within 4 hours. No delays.
+            </p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">
+              <i class="fa-solid fa-smile"></i>
+            </div>
+            <h3 data-i18n="feature4_title">Proven Results</h3>
+            <p data-i18n="feature4_desc">
+              Students and job seekers land interviews in Algeria and abroad.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 4: Our Work -->
+    <section class="relative py-24 overflow-hidden" x-data="{ active: 'introduction' }">
+      <div class="container px-4 mx-auto">
+        <div class="mb-12 md:max-w-4xl text-center mx-auto">
+          <h2 class="font-heading text-7xl lg:text-8xl text-white tracking-tighter-xl">
+            Our Work
+          </h2>
+        </div>
+        <ul class="mb-20 flex flex-wrap justify-center">
+          <li>
+            <a class="inline-block px-5 py-5 font-medium text-green-300 tracking-tighter border border-green-400 rounded-full transition duration-200 text-green-400"
+              x-on:click.prevent="active = 'introduction'"
+              :class="{'text-green-400 border-green-400': active === 'introduction', 'text-gray-300 border-transparent': active !== 'introduction'}"
+              href="#">Resumes</a>
+          </li>
+          <li>
+            <a class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
+              x-on:click.prevent="active = 'aggregation'"
+              :class="{'text-green-400 border-green-400': active === 'aggregation', 'text-gray-300 border-transparent': active !== 'aggregation'}"
+              href="#">Motivation Letters</a>
+          </li>
+          <li>
+            <a class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
+              x-on:click.prevent="active = 'integrations'"
+              :class="{'text-green-400 border-green-400': active === 'integrations', 'text-gray-300 border-transparent': active !== 'integrations'}"
+              href="#">LinkedIn Profiles</a>
+          </li>
+        </ul>
+        <img class="mx-auto" :class="{ 'hidden': active != 'introduction' }" src="assets/images/slogan.png"
+          alt="" /><img class="hidden mx-auto" :class="{ 'hidden': active != 'aggregation' }"
+          src="assets/images/slogan.png" alt="" /><img class="hidden mx-auto"
+          :class="{ 'hidden': active != 'integrations' }" src="assets/images/slogan.png" alt="" />
+      </div>
+    </section>
+
+    <!-- Section 5: About Us -->
+    <section class="about section" id="about">
+      <h2 class="section-title">About us</h2>
+
+      <div class="about-container container grid">
+        <img src="assets/images/CV illustration.jpg" alt="" class="about-img">
+        <div class="about-data">
+          <h3 class="about-heading">Your Career Story, Told So Well Recruiters Can’t Ignore It</h3>
+          <p class="about-description">At ProFile, we don’t just format résumés — we reveal the version of you that recruiters can’t skip. Imagine your CV making an impact in the first 6 seconds. Imagine a cover letter that feels written for them but speaks about you. From your first internship to your dream scholarship, we craft profiles that don’t just list experiences — they spark opportunities.</p>
+          <div class="about-info">
+            <div class="about-box">
+              <i class="uil uil-award about-icon"></i>
+              <h3 class="about-title">No More Cookie-Cutter CVs</h3>
+              <span class="about-subtitle">Custom-crafted to match your unique goals.</span>
+            </div>
+            <div class="about-box">
+              <i class="uil uil-suitcase-alt about-icon"></i>
+              <h3 class="about-title">The 6-Second Secret</h3>
+              <span class="about-subtitle">Recruiters decide fast — we make every second count.</span>
+            </div>
+            <div class="about-box">
+              <i class="uil uil-headphones-alt about-icon"></i>
+              <h3 class="about-title">Trusted by 250+ Clients</h3>
+              <span class="about-subtitle">Students and pros worldwide rely on us to stand out.</span>
+            </div>
+          </div>
+          <a href="#services" class="services-btn"><i class="uil uil-navigator button-icon"></i>Get Started</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section 6: How It Works -->
+    <section class="how-it-works">
+      <div class="container">
+        <h2 class="section-title" data-i18n="how_title">How It Works</h2>
+        <div class="steps-container">
+          <div class="step">
+            <div class="step-number">1</div>
+            <h3 data-i18n="how_step1_title">Submit your request</h3>
+            <p data-i18n="how_step1_desc">
+              Tell us what you need and your career goals by filling out the
+              appropriate form.
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">2</div>
+            <h3 data-i18n="how_step2_title">We contact you</h3>
+            <p data-i18n="how_step2_desc">
+              We'll reach out to discuss your requirements
+            </p>
+          </div>
+          <div class="step">
+            <div class="step-number">3</div>
+            <h3 data-i18n="how_step3_title">
+              Get your professional documents
+            </h3>
+            <p data-i18n="how_step3_desc">
+              Receive your polished, professional materials
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="services-cta">
+        <a href="#services" class="services-btn" data-i18n="get_started">Get Started</a>
+      </div>
+    </section>
+
+    <!-- Section 7: Offers -->
+    <section class="offers">
+      <h2 class="section-title">
+          Packs
+        </h2>
+      <div class="background">
+        <div class="container">
+          <div class="panel pricing-table">
+
+            <div class="pricing-plan">
+              <img src="https://s22.postimg.cc/8mv5gn7w1/paper-plane.png" alt="" class="pricing-img">
+              <h2 class="pricing-header">Schoralship</h2>
+              <ul class="pricing-features">
+                <li class="pricing-features-item">Custom domains</li>
+                <li class="pricing-features-item">Sleeps after 30 mins of inactivity</li>
+              </ul>
+              <span class="pricing-price">Free</span>
+              <a href="#/" class="pricing-button">Sign up</a>
+            </div>
+
+            <div class="pricing-plan">
+              <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="" class="pricing-img">
+              <h2 class="pricing-header">Job</h2>
+              <ul class="pricing-features">
+                <li class="pricing-features-item">Never sleeps</li>
+                <li class="pricing-features-item">Multiple workers for more powerful apps</li>
+              </ul>
+              <span class="pricing-price">$150</span>
+              <a href="#/" class="pricing-button is-featured">Free trial</a>
+            </div>
+
+            <div class="pricing-plan">
+              <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="" class="pricing-img">
+              <h2 class="pricing-header">Complete</h2>
+              <ul class="pricing-features">
+                <li class="pricing-features-item">Dedicated</li>
+                <li class="pricing-features-item">Simple horizontal scalability</li>
+              </ul>
+              <span class="pricing-price">$400</span>
+              <a href="#/" class="pricing-button">Free trial</a>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section: Contact Us -->
+    <section class="contact-us-section" id="contact">
+      <h2 class="section-title">Contact Us</h2>
+      <div class="contact-us-container">
+        <form class="contact-form" id="contactForm">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" required placeholder="Your Name">
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required placeholder="Your Email">
+          </div>
+          <div class="form-group">
+            <label for="message">Message</label>
+            <textarea id="message" name="message" rows="5" required placeholder="Your Message"></textarea>
+          </div>
+          <button type="submit" class="contact-btn">Send Message</button>
+        </form>
+        <div id="contact-success" style="display:none; text-align:center; margin-top:1.5rem; color:#0a1d3d; font-weight:600; font-size:1.2rem;">Your message has been sent!</div>
+    </section>
+  </main>
+
+
+  <!-- Section 8: Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="brand-info">
+          <img src="assets/logo/Logo 3.png" alt="ProFile Logo" class="footer-logo" />
+          <h3 data-i18n="brand">ProFile</h3>
+          <p class="brand-slogan" data-i18n="footer_slogan">
+            "Everything.. starts with a profile."
+          </p>
+        </div>
+        <div class="social-links">
+          <a href="#contact" class="social-link" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="mailto:contact@profile.com" class="social-link" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://instagram.com/profile" class="social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61578142722578" class="social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
           </a>
         </div>
-        <ul>
-          <li><a href="#services" data-i18n="nav_services">Services</a></li>
-          <li><a href="#about" data-i18n="nav_about">About</a></li>
-          <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-        </ul>
-        <div class="lang-switcher">
-          <button id="lang-en" class="lang-btn active">EN</button>
-          <button id="lang-fr" class="lang-btn">FR</button>
-        </div>
-      </nav>
-    </header>
+      </div>
 
-    <main>
-      <section class="hero" id="about">
-        <div class="hero-left">
-          <img
-            class="slogan slogan-desktop"
-            src="assets/images/slogan.png"
-            alt="ProFile Slogan"
-          />
-          <img
-            class="slogan slogan-mobile"
-            src="assets/images/slogan-mobile.png"
-            alt="ProFile Slogan Mobile"
-          />
-          <a class="cta" href="about.html" data-i18n="hero_cta">Learn More</a>
+      <!-- Links Section -->
+      <div class="footer-links">
+        <div class="link-group">
+          <h4 data-i18n="footer_company">Agency</h4>
+          <ul>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
         </div>
-        <div class="hero-right">
-          <img
-            class="illustration"
-            src="assets/images/hero section illustration.svg"
-            alt="ProFile Illustration"
-          />
-        </div>
-      </section>
-
-      <section class="creative-cards" id="services">
-        <div class="container">
-          <div class="row">
-            <div class="card-column">
-              <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
-                <div class="card-details">
-                  <div class="card-icons">
-                    <img
-                      class="light-icon"
-                      src="assets/icons/cv.svg"
-                      alt="icon"
-                    />
-                  </div>
-                  <h3 data-i18n="card_resume_title">Resume</h3>
-                  <p data-i18n="card_resume_desc">
-                    Get a professional resume crafted to match your goals. We
-                    highlight your skills, experience, and strengths with design
-                    and clarity that gets you noticed.
-                  </p>
-                  <div class="read-more-btn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="card-column">
-              <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
-                <div class="card-details">
-                  <div class="card-icons">
-                    <img
-                      class="light-icon"
-                      src="assets/icons/letter.svg"
-                      alt="icon"
-                    />
-                  </div>
-                  <h3 data-i18n="card_letter_title">Motivation Letter</h3>
-                  <p data-i18n="card_letter_desc">
-                    Make a strong impression with a personalized letter that
-                    captures who you are and why you're the perfect fit. clear,
-                    confident, and authentic.
-                  </p>
-                  <div class="read-more-btn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-            <div class="card-column">
-              <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
-                <div class="card-details">
-                  <div class="card-icons">
-                    <img
-                      class="light-icon"
-                      src="assets/icons/profile.svg"
-                      alt="icon"
-                    />
-                  </div>
-                  <h3 data-i18n="card_linkedin_title">LinkedIn Profile</h3>
-                  <p data-i18n="card_linkedin_desc">
-                    Turn your LinkedIn into a powerful career tool. We help you
-                    structure your profile, choose the right keywords, and build
-                    a strong personal brand.
-                  </p>
-                  <div class="read-more-btn">
-                    <i class="fa-solid fa-arrow-right"></i>
-                  </div>
-                </div>
-              </a>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Section 4: Why Choose Us -->
-      <section class="why-choose-us">
-        <div class="container">
-          <h2 class="section-title" data-i18n="why_choose_title">
-            Why Choose ProFile?
-          </h2>
-          <div class="features-grid">
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fa-solid fa-user"></i>
-              </div>
-              <h3 data-i18n="feature1_title">Personalised for You</h3>
-              <p data-i18n="feature1_desc">
-                Every CV and letter is crafted to fit your goals and industry.
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fa-solid fa-thumbs-up"></i>
-              </div>
-              <h3 data-i18n="feature2_title">Recruiter & ATS Approved</h3>
-              <p data-i18n="feature2_desc">
-                We follow global CV rules to help you pass the 6-second test.
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fa-solid fa-clock"></i>
-              </div>
-              <h3 data-i18n="feature3_title">Fast & Responsive</h3>
-              <p data-i18n="feature3_desc">
-                Get results within 4 hours. No delays.
-              </p>
-            </div>
-            <div class="feature-card">
-              <div class="feature-icon">
-                <i class="fa-solid fa-smile"></i>
-              </div>
-              <h3 data-i18n="feature4_title">Proven Results</h3>
-              <p data-i18n="feature4_desc">
-                Students and job seekers land interviews in Algeria and abroad.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-      <section
-        class="relative py-24 overflow-hidden"
-        x-data="{ active: 'introduction' }"
-      >
-        <div class="container px-4 mx-auto">
-          <div class="mb-12 md:max-w-4xl text-center mx-auto">
-            <h2
-              class="font-heading text-7xl lg:text-8xl text-white tracking-tighter-xl"
-            >
-              Our Work
-            </h2>
-          </div>
-          <ul class="mb-20 flex flex-wrap justify-center">
+        <div class="link-group">
+          <h4 data-i18n="footer_services">Services</h4>
+          <ul>
             <li>
-              <a
-                class="inline-block px-5 py-5 font-medium text-green-300 tracking-tighter border border-green-400 rounded-full transition duration-200 text-green-400"
-                x-on:click.prevent="active = 'introduction'"
-                :class="{'text-green-400 border-green-400': active === 'introduction', 'text-gray-300 border-transparent': active !== 'introduction'}"
-                href="#"
-                >Introduction</a
-              >
+              <a href="#resume" data-i18n="footer_resume">Resume Writing</a>
             </li>
             <li>
-              <a
-                class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
-                x-on:click.prevent="active = 'aggregation'"
-                :class="{'text-green-400 border-green-400': active === 'aggregation', 'text-gray-300 border-transparent': active !== 'aggregation'}"
-                href="#"
-                >Aggregation</a
-              >
+              <a href="#letter" data-i18n="footer_letter">Motivation Letters</a>
             </li>
             <li>
-              <a
-                class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
-                x-on:click.prevent="active = 'integrations'"
-                :class="{'text-green-400 border-green-400': active === 'integrations', 'text-gray-300 border-transparent': active !== 'integrations'}"
-                href="#"
-                >Integrations</a
-              >
+              <a href="#linkedin" data-i18n="footer_linkedin">LinkedIn Makeover</a>
             </li>
           </ul>
-          <img
-            class="mx-auto"
-            :class="{ 'hidden': active != 'introduction' }"
-            src="assets/images/slogan.png"
-            alt=""
-          /><img
-            class="hidden mx-auto"
-            :class="{ 'hidden': active != 'aggregation' }"
-            src="assets/images/slogan.png"
-            alt=""
-          /><img
-            class="hidden mx-auto"
-            :class="{ 'hidden': active != 'integrations' }"
-            src="assets/images/slogan.png"
-            alt=""
-          />
-        </div>
-      </section>
-
-      <!-- Section 5: How It Works -->
-      <section class="how-it-works" id="contact">
-        <div class="container">
-          <h2 class="section-title" data-i18n="how_title">How It Works</h2>
-          <div class="steps-container">
-            <div class="step">
-              <div class="step-number">1</div>
-              <h3 data-i18n="how_step1_title">Submit your request</h3>
-              <p data-i18n="how_step1_desc">
-                Tell us what you need and your career goals by filling out the
-                appropriate form.
-              </p>
-            </div>
-            <div class="step">
-              <div class="step-number">2</div>
-              <h3 data-i18n="how_step2_title">We contact you</h3>
-              <p data-i18n="how_step2_desc">
-                We'll reach out to discuss your requirements
-              </p>
-            </div>
-            <div class="step">
-              <div class="step-number">3</div>
-              <h3 data-i18n="how_step3_title">
-                Get your professional documents
-              </h3>
-              <p data-i18n="how_step3_desc">
-                Receive your polished, professional materials
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="services-cta">
-          <a href="#services" class="services-btn" data-i18n="get_started"
-            >Get Started</a
-          >
-        </div>
-      </section>
-    </main>
-
-    <!-- Section 8: Footer -->
-    <footer class="footer">
-      <div class="footer-container">
-        <!-- Brand Section -->
-        <div class="footer-brand">
-          <div class="brand-info">
-            <img
-              src="assets/logo/Logo 3.png"
-              alt="ProFile Logo"
-              class="footer-logo"
-            />
-            <h3 data-i18n="brand">ProFile</h3>
-            <p class="brand-slogan" data-i18n="footer_slogan">
-              "Everything.. starts with a profile."
-            </p>
-          </div>
-          <div class="social-links">
-            <a
-              href="https://wa.me/YOUR_NUMBER"
-              class="social-link"
-              aria-label="Email"
-            >
-              <i class="fa-solid fa-envelope"></i>
-            </a>
-            <a
-              href="mailto:contact@profile.com"
-              class="social-link"
-              aria-label="TikTok"
-            >
-              <i class="fa-brands fa-tiktok"></i>
-            </a>
-            <a
-              href="https://instagram.com/profile"
-              class="social-link"
-              aria-label="Instagram"
-            >
-              <i class="fa-brands fa-instagram"></i>
-            </a>
-            <a
-              href="https://www.facebook.com/profile.php?id=61578142722578"
-              class="social-link"
-              aria-label="Facebook"
-            >
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-          </div>
-        </div>
-
-        <!-- Links Section -->
-        <div class="footer-links">
-          <div class="link-group">
-            <h4 data-i18n="footer_company">Agency</h4>
-            <ul>
-              <li><a href="#about" data-i18n="nav_about">About</a></li>
-              <li><a href="#services" data-i18n="nav_services">Services</a></li>
-              <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
-            </ul>
-          </div>
-          <div class="link-group">
-            <h4 data-i18n="footer_services">Services</h4>
-            <ul>
-              <li>
-                <a href="#resume" data-i18n="footer_resume">Resume Writing</a>
-              </li>
-              <li>
-                <a href="#letter" data-i18n="footer_letter"
-                  >Motivation Letters</a
-                >
-              </li>
-              <li>
-                <a href="#linkedin" data-i18n="footer_linkedin"
-                  >LinkedIn Makeover</a
-                >
-              </li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Newsletter Section -->
-        <div class="footer-newsletter">
-          <h4 data-i18n="footer_newsletter">Stay Updated</h4>
-          <p data-i18n="footer_newsletter_desc">
-            Get free tips and insights about career development and professional
-            growth.
-          </p>
-          <div class="newsletter-form">
-            <div class="input-group">
-              <input
-                type="email"
-                placeholder="Enter your email"
-                class="newsletter-input"
-                required
-                data-i18n-placeholder="footer_email_placeholder"
-              />
-              <button type="submit" class="newsletter-btn">
-                <i class="fa-solid fa-paper-plane"></i>
-              </button>
-            </div>
-            <p class="privacy-note" data-i18n="footer_privacy">
-              We respect your privacy. Unsubscribe anytime.
-            </p>
-          </div>
         </div>
       </div>
 
-      <!-- Bottom Bar -->
-      <div class="footer-bottom">
-        <div class="footer-bottom-content">
-          <p data-i18n="footer_copyright">
-            &copy; 2025 ProFile. All rights reserved.
+      <!-- Newsletter Section -->
+      <div class="footer-newsletter">
+        <h4 data-i18n="footer_newsletter">Stay Updated</h4>
+        <p data-i18n="footer_newsletter_desc">
+          Get free tips and insights about career development and professional
+          growth.
+        </p>
+        <div class="newsletter-form">
+          <div class="input-group">
+            <input type="email" placeholder="Enter your email" class="newsletter-input" required
+              data-i18n-placeholder="footer_email_placeholder" />
+            <button type="submit" class="newsletter-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+          <p class="privacy-note" data-i18n="footer_privacy">
+            We respect your privacy. Unsubscribe anytime.
           </p>
         </div>
       </div>
-    </footer>
+    </div>
 
-    <script src="scripts/main.js"></script>
-  </body>
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p data-i18n="footer_copyright">
+          &copy; 2025 ProFile. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</body>
+
 </html>

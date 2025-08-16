@@ -160,11 +160,7 @@ video {
   display: block;
   vertical-align: middle;
 }
-img,
-video {
-  max-width: 100%;
-  height: auto;
-}
+
 [hidden] {
   display: none;
 }
@@ -318,6 +314,7 @@ video {
 .mx-auto {
   margin-left: auto;
   margin-right: auto;
+  max-width: 100%;
 }
 .mb-1\.5 {
   margin-bottom: 0.375rem;
