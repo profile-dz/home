@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProFile</title>
+  <meta name="description" content="Everything .. starts with ProFile." />
+  <link rel="icon" href="assets/logo/Logo round.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/tailwind.formatted.css" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer="defer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
+
+<body>
+  <!-- Mobile Menu Toggle -->
+  <div class="mobile-menu-toggle">
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <header>
+    <nav>
+      <div class="nav-brand">
+        <a href="index.html" class="brand-link">
+          <img class="logo" src="assets/logo/Logo 3 blue.png" alt="ProFile Logo" />
+          <h1 class="title" data-i18n="brand">ProFile</h1>
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button id="lang-en" class="lang-btn active">EN</button>
+        <button id="lang-fr" class="lang-btn">FR</button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- CV Service Intro -->
+  <section class="cv-intro-section">
+    <h2 class="section-title">Get Your Professional CV</h2>
+    <p class="cv-intro-text">Choose your CV category, preview templates, and fill out the form to get a custom CV tailored to your needs. Select a template you like, and we'll use it for your CV design!</p>
+  </section>
+
+  <!-- Section: CV Service Categories -->
+  <section class="cv-categories-section" id="cv-categories" x-data="{
+      active: 'category1',
+      selectedTemplate: null,
+      prices: { category1: 150, category2: 250, category3: 200, category4: 300 },
+      templatePrices: {
+        1: 150, 2: 180, 3: 250, 4: 270, 5: 200, 6: 220, 7: 300, 8: 320
+      },
+      templates: {
+        category1: [
+          { id: 1, img: 'assets/images/template1.jpg' },
+          { id: 2, img: 'assets/images/template2.jpg' },
+          { id: 9, img: 'assets/images/template9.jpg' }
+        ],
+        category2: [
+          { id: 3, img: 'assets/images/template3.jpg' },
+          { id: 4, img: 'assets/images/template4.jpg' },
+          { id: 10, img: 'assets/images/template10.jpg' }
+        ],
+        category3: [
+          { id: 5, img: 'assets/images/template5.jpg' },
+          { id: 6, img: 'assets/images/template6.jpg' },
+          { id: 11, img: 'assets/images/template11.jpg' }
+        ],
+        category4: [
+          { id: 7, img: 'assets/images/template7.jpg' },
+          { id: 8, img: 'assets/images/template8.jpg' },
+          { id: 12, img: 'assets/images/template12.jpg' }
+        ]
+      }
+    }">
+    <h2 class="section-title">Choose Your CV Category</h2>
+    <ul class="cv-slider-tabs">
+      <li>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category1' }" x-on:click.prevent="active = 'category1'; selectedTemplate = null;">Student CV</a>
+      </li>
+      <li>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category2' }" x-on:click.prevent="active = 'category2'; selectedTemplate = null;">Professional CV</a>
+      </li>
+      <li>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category3' }" x-on:click.prevent="active = 'category3'; selectedTemplate = null;">Academic CV</a>
+      </li>
+      <li>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category4' }" x-on:click.prevent="active = 'category4'; selectedTemplate = null;">Executive CV</a>
+      </li>
+    </ul>
+    <div class="cv-slider-content">
+      <template x-for="cat in [active]">
+        <div class="cv-form-slide">
+          <!-- Template Previews -->
+          <div class="cv-templates-preview">
+            <h3 class="cv-templates-title">Choose a Template</h3>
+            <div class="cv-templates-list">
+              <template x-for="tpl in templates[cat]" :key="tpl.id">
+                <div class="cv-template-card" :class="{ 'selected': selectedTemplate === tpl.id }" x-on:click="selectedTemplate = tpl.id">
+                  <img :src="tpl.img" :alt="'Template ' + tpl.id" class="cv-template-img">
+                  <div class="cv-template-label">Template #<span x-text="tpl.id"></span></div>
+                  <div style="font-size:0.95rem; color:#f5b800; font-weight:600; margin-top:0.3rem;">Price: <span x-text="templatePrices[tpl.id] || prices[cat]"></span> DZD</div>
+                </div>
+              </template>
+            </div>
+          </div>
+          <!-- Price -->
+          <!-- Price display removed, now only shown in template card -->
+          <!-- Form -->
+          <template x-if="selectedTemplate">
+            <div class="cv-form-placeholder">
+              <!-- Embed your Google Form for this category here -->
+              <!-- Add a hidden field for template number -->
+              <form>
+                <input type="hidden" name="template_id" :value="selectedTemplate">
+                <!-- ...embed Google Form fields here... -->
+                <div style="margin-bottom:1rem; color:#0a1d3d; font-weight:600;">Selected Template: <span x-text="selectedTemplate"></span></div>
+                <div style="color:#888;">[Google Form goes here]</div>
+              </form>
+            </div>
+          </template>
+          <template x-if="!selectedTemplate">
+            <div class="cv-form-placeholder">Please select a template above to continue.</div>
+          </template>
+        </div>
+      </template>
+    </div>
+    <style>
+      .cv-intro-section { padding: 2rem 0 1rem 0; text-align: center; }
+      .cv-intro-text { font-size: 1.1rem; color: #555; max-width: 600px; margin: 0 auto; }
+      .cv-categories-section { padding: 3rem 0 2rem 0; background: #fff; }
+      .cv-slider-container, .cv-categories-section { max-width: 900px; margin: 0 auto; background: #ffffffb3; border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(10,29,61,0.10); padding: 2rem 2rem 1.5rem 2rem; }
+      .cv-slider-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
+      .cv-tab-btn { display: inline-block; padding: 0.7rem 1.2rem; border-radius: 2rem; background: #fff; color: #0a1d3d; font-weight: 600; font-size: 1rem; border: 2px solid #f5b800; transition: background 0.2s, color 0.2s, border 0.2s; }
+      .cv-tab-btn.active, .cv-tab-btn:hover { background: #f5b800; color: #0a1d3d; border-color: #0a1d3d; }
+      .cv-slider-content { min-height: 420px; display: flex; align-items: center; justify-content: center; }
+      .cv-form-slide { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
+      .cv-templates-preview { margin-bottom: 2rem; width: 100%; }
+      .cv-templates-title { font-size: 1.1rem; color: #0a1d3d; font-weight: 600; margin-bottom: 1rem; text-align: center; }
+      .cv-templates-list { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
+      .cv-template-card { background: #fffbe6; border: 2px dashed #f5b800; border-radius: 1rem; padding: 1.2rem; cursor: pointer; transition: box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; align-items: center; width: 200px; }
+      .cv-template-card.selected { border-color: #0a1d3d; box-shadow: 0 4px 16px rgba(10,29,61,0.12); }
+      .cv-template-img { width: 160px; height: 220px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 0.7rem; background: #eee; box-shadow: 0 2px 12px rgba(10,29,61,0.08); }
+      .cv-template-label { font-size: 1rem; color: #0a1d3d; font-weight: 500; }
+      .cv-category-price { font-size: 1.1rem; color: #f5b800; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
+      .cv-form-placeholder { width: 100%; min-height: 120px; background: #fffbe6; border: 2px dashed #f5b800; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #0a1d3d; font-size: 1.1rem; font-weight: 600; text-align: center; margin-top: 1rem; }
+      @media (max-width: 900px) {
+        .cv-templates-list { gap: 1.2rem; }
+        .cv-template-card { width: 150px; padding: 1rem; }
+        .cv-template-img { width: 110px; height: 150px; }
+      }
+      @media (max-width: 768px) {
+        .cv-slider-container, .cv-categories-section { padding: 1.2rem 0.7rem 1rem 0.7rem; border-radius: 1rem; }
+        .cv-slider_tabs { gap: 0.5rem; flex-direction: column; align-items: center; flex-wrap: wrap; }
+        .cv-tab-btn { width: 100%; font-size: 0.97rem; padding: 0.6rem 1rem; }
+        .cv-slider-content { min-height: 220px; }
+        .cv-templates-list { gap: 0.7rem; }
+        .cv-template-card { width: 110px; padding: 0.7rem; }
+        .cv-template-img { width: 80px; height: 110px; }
+        .cv-form-placeholder { min-height: 80px; font-size: 1rem; }
+      }
+    </style>
+    <!-- Replace template images and Google Form embed code as needed -->
+  </section>
+
+  <!-- Section 8: Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="brand-info">
+          <img src="assets/logo/Logo 3.png" alt="ProFile Logo" class="footer-logo" />
+          <h3 data-i18n="brand">ProFile</h3>
+          <p class="brand-slogan" data-i18n="footer_slogan">
+            "Everything.. starts with a profile."
+          </p>
+        </div>
+        <div class="social-links">
+          <a href="index.html#contact" class="social-link" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.tiktok.com/@profile.dz" class="social-link" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/profile_dz_agency" class="social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61578142722578" class="social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Section -->
+      <div class="footer-links">
+        <div class="link-group">
+          <h4 data-i18n="footer_company">Agency</h4>
+          <ul>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <h4 data-i18n="footer_services">Services</h4>
+          <ul>
+            <li>
+              <a href="#resume" data-i18n="footer_resume">Resume Writing</a>
+            </li>
+            <li>
+              <a href="#letter" data-i18n="footer_letter">Motivation Letters</a>
+            </li>
+            <li>
+              <a href="#linkedin" data-i18n="footer_linkedin">LinkedIn Makeover</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="footer-newsletter">
+        <h4 data-i18n="footer_newsletter">Stay Updated</h4>
+        <p data-i18n="footer_newsletter_desc">
+          Get free tips and insights about career development and professional
+          growth.
+        </p>
+        <div class="newsletter-form">
+          <div class="input-group">
+            <input type="email" placeholder="Enter your email" class="newsletter-input" required
+              data-i18n-placeholder="footer_email_placeholder" />
+            <button type="submit" class="newsletter-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+          <p class="privacy-note" data-i18n="footer_privacy">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p data-i18n="footer_copyright">
+          &copy; 2025 ProFile. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

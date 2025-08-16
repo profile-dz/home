@@ -15,6 +15,106 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer="defer"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="scripts/main.js"></script>
+  <style>
+        .panel.pricing-table {
+          display: flex;
+          gap: 2rem;
+          justify-content: center;
+          flex-wrap: wrap;
+        }
+        .pricing-plan {
+          background: #fffbe6;
+          border-radius: 1.2rem;
+          box-shadow: 0 4px 24px rgba(10,29,61,0.10);
+          padding: 2.2rem 1.5rem 2.2rem 1.5rem;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          min-width: 260px;
+          max-width: 320px;
+          flex: 1 1 260px;
+        }
+        .pricing-img {
+          width: 70px;
+          height: 70px;
+          margin-bottom: 1.2rem;
+        }
+        .pricing-header {
+          font-size: 1.5rem;
+          font-weight: 700;
+          color: #0a1d3d;
+          margin-bottom: 1rem;
+          text-align: center;
+        }
+        .pricing-features {
+          list-style: none;
+          padding: 0;
+          margin: 0 0 1.2rem 0;
+          min-height: 90px;
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+        }
+        .pricing-features-item {
+          font-size: 1rem;
+          color: #555;
+          margin-bottom: 0.5rem;
+          text-align: center;
+        }
+        .pricing-price {
+          font-size: 1.3rem;
+          color: #f5b800;
+          font-weight: 700;
+          margin-bottom: 1.2rem;
+          text-align: center;
+        }
+        .pricing-button {
+          display: inline-block;
+          background: #0a1d3d;
+          color: #fff;
+          font-weight: 600;
+          font-size: 1rem;
+          padding: 0.7rem 2.2rem;
+          border-radius: 2rem;
+          text-decoration: none;
+          transition: background 0.2s, color 0.2s;
+          margin-top: auto;
+          min-width: 140px;
+          text-align: center;
+        }
+        .pricing-button.is-featured {
+          background: #f5b800;
+          color: #0a1d3d;
+        }
+        @media (max-width: 900px) {
+          .panel.pricing-table {
+            gap: 1rem;
+          }
+          .pricing-plan {
+            min-width: 220px;
+            max-width: 95vw;
+            padding: 1.2rem 0.7rem 1.2rem 0.7rem;
+          }
+          .pricing-img {
+            width: 50px;
+            height: 50px;
+          }
+          .pricing-header {
+            font-size: 1.1rem;
+          }
+          .pricing-features {
+            min-height: 70px;
+          }
+          .pricing-price {
+            font-size: 1.1rem;
+          }
+          .pricing-button {
+            font-size: 0.97rem;
+            min-width: 110px;
+            padding: 0.6rem 1.2rem;
+          }
+        }
+      </style>
 </head>
 
 <body>
@@ -65,7 +165,7 @@
       <div class="container">
         <div class="row">
           <div class="card-column">
-            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+            <a href="cv.html" class="card-link">
               <div class="card-details">
                 <div class="card-icons">
                   <img class="light-icon" src="assets/icons/cv.svg" alt="icon" />
@@ -83,7 +183,7 @@
             </a>
           </div>
           <div class="card-column">
-            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+            <a href="letter.html" class="card-link">
               <div class="card-details">
                 <div class="card-icons">
                   <img class="light-icon" src="assets/icons/letter.svg" alt="icon" />
@@ -101,7 +201,7 @@
             </a>
           </div>
           <div class="card-column">
-            <a href="https://www.fiverr.com/s/8zElN2v" class="card-link">
+            <a href="linkedin.html" class="card-link">
               <div class="card-details">
                 <div class="card-icons">
                   <img class="light-icon" src="assets/icons/profile.svg" alt="icon" />
@@ -281,36 +381,39 @@
           <div class="panel pricing-table">
 
             <div class="pricing-plan">
-              <img src="https://s22.postimg.cc/8mv5gn7w1/paper-plane.png" alt="" class="pricing-img">
-              <h2 class="pricing-header">Schoralship</h2>
+              <img src="https://s22.postimg.cc/8mv5gn7w1/paper-plane.png" alt="CV Pack" class="pricing-img">
+              <h2 class="pricing-header">Scholarship Pack</h2>
               <ul class="pricing-features">
-                <li class="pricing-features-item">Custom domains</li>
-                <li class="pricing-features-item">Sleeps after 30 mins of inactivity</li>
+                <li class="pricing-features-item">Professional CV that stands out</li>
+                <li class="pricing-features-item">Motivation Letter that gets noticed</li>
+                <li class="pricing-features-item">Recommendation Letter crafted for impact</li>
               </ul>
-              <span class="pricing-price">Free</span>
-              <a href="#/" class="pricing-button">Sign up</a>
+              <span class="pricing-price">1499 DA</span>
+              <a href="#/" class="pricing-button">Get Started</a>
             </div>
 
             <div class="pricing-plan">
-              <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="" class="pricing-img">
-              <h2 class="pricing-header">Job</h2>
+              <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="Job Pack" class="pricing-img">
+              <h2 class="pricing-header">Job Hunter Pack</h2>
               <ul class="pricing-features">
-                <li class="pricing-features-item">Never sleeps</li>
-                <li class="pricing-features-item">Multiple workers for more powerful apps</li>
+                <li class="pricing-features-item">CV tailored for your dream job</li>
+                <li class="pricing-features-item">LinkedIn Profile Optimization for recruiters</li>
               </ul>
-              <span class="pricing-price">$150</span>
-              <a href="#/" class="pricing-button is-featured">Free trial</a>
+              <span class="pricing-price">1799 DA</span>
+              <a href="#/" class="pricing-button is-featured">Boost My Career</a>
             </div>
 
             <div class="pricing-plan">
-              <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="" class="pricing-img">
-              <h2 class="pricing-header">Complete</h2>
+              <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="Complete Pack" class="pricing-img">
+              <h2 class="pricing-header">Complete Success Pack</h2>
               <ul class="pricing-features">
-                <li class="pricing-features-item">Dedicated</li>
-                <li class="pricing-features-item">Simple horizontal scalability</li>
+                <li class="pricing-features-item">CV that opens doors</li>
+                <li class="pricing-features-item">Motivation Letter that wins hearts</li>
+                <li class="pricing-features-item">Recommendation Letters for credibility</li>
+                <li class="pricing-features-item">LinkedIn Profile Optimization for global reach</li>
               </ul>
-              <span class="pricing-price">$400</span>
-              <a href="#/" class="pricing-button">Free trial</a>
+              <span class="pricing-price">1999 DA</span>
+              <a href="#/" class="pricing-button">Unlock Everything</a>
             </div>
 
           </div>
@@ -358,10 +461,10 @@
           <a href="#contact" class="social-link" aria-label="Email">
             <i class="fa-solid fa-envelope"></i>
           </a>
-          <a href="mailto:contact@profile.com" class="social-link" aria-label="TikTok">
+          <a href="https://www.tiktok.com/@profile.dz" class="social-link" aria-label="TikTok">
             <i class="fa-brands fa-tiktok"></i>
           </a>
-          <a href="https://instagram.com/profile" class="social-link" aria-label="Instagram">
+          <a href="https://www.instagram.com/profile_dz_agency" class="social-link" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
           <a href="https://www.facebook.com/profile.php?id=61578142722578" class="social-link" aria-label="Facebook">

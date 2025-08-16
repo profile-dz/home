@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ProFile</title>
+  <meta name="description" content="Everything .. starts with ProFile." />
+  <link rel="icon" href="assets/logo/Logo round.png" type="image/png" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet" />
+  <link rel="stylesheet" href="styles/style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link rel="stylesheet" href="styles/tailwind.formatted.css" />
+  <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer="defer"></script>
+  <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
+  <script src="scripts/main.js"></script>
+</head>
+
+<body>
+  <!-- Mobile Menu Toggle -->
+  <div class="mobile-menu-toggle">
+    <button class="hamburger" onclick="toggleMobileMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+  </div>
+
+  <header>
+    <nav>
+      <div class="nav-brand">
+        <a href="index.html" class="brand-link">
+          <img class="logo" src="assets/logo/Logo 3 blue.png" alt="ProFile Logo" />
+          <h1 class="title" data-i18n="brand">ProFile</h1>
+        </a>
+      </div>
+      <ul>
+        <li><a href="index.html#services" data-i18n="nav_services">Services</a></li>
+        <li><a href="index.html#about" data-i18n="nav_about">About</a></li>
+        <li><a href="index.html#contact" data-i18n="nav_contact">Contact</a></li>
+      </ul>
+      <div class="lang-switcher">
+        <button id="lang-en" class="lang-btn active">EN</button>
+        <button id="lang-fr" class="lang-btn">FR</button>
+      </div>
+    </nav>
+  </header>
+
+    <!-- Beautiful Coming Soon Section -->
+  <section class="coming-soon-section">
+    <div class="coming-soon-content">
+      <h2 class="coming-soon-title">Letters That Open Doors</h2>
+      <p class="coming-soon-text">From motivation letters to recommendations, we’ll help you write words that impress admissions officers and employers.<br>This service is almost ready — your next big opportunity starts here!</p>
+      <div class="coming-soon-badge">Coming Soon</div>
+    </div>
+  </section>
+  <style>
+    .coming-soon-section {
+      min-height: 60vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(120deg, #f5b800 0%, #fffbe6 100%);
+      padding: 3rem 0 2rem 0;
+    }
+
+    .coming-soon-content {
+      background: #fff;
+      border-radius: 2rem;
+      box-shadow: 0 8px 32px rgba(10, 29, 61, 0.10);
+      padding: 2.5rem 2rem 2rem 2rem;
+      text-align: center;
+      max-width: 420px;
+      width: 100%;
+      margin: 0 1rem;
+    }
+
+    .coming-soon-logo {
+      width: 70px;
+      height: 70px;
+      margin-bottom: 1.2rem;
+      border-radius: 1rem;
+      box-shadow: 0 2px 12px rgba(10, 29, 61, 0.08);
+      background: #eee;
+    }
+
+    .coming-soon-title {
+      font-size: 2.1rem;
+      font-weight: 700;
+      color: #0a1d3d;
+      margin-bottom: 0.7rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .coming-soon-text {
+      font-size: 1.15rem;
+      color: #555;
+      margin-bottom: 1.5rem;
+      font-family: 'Poppins', sans-serif;
+    }
+
+    .coming-soon-badge {
+      display: inline-block;
+      background: #f5b800;
+      color: #0a1d3d;
+      font-weight: 700;
+      font-size: 1.1rem;
+      padding: 0.6rem 1.5rem;
+      border-radius: 2rem;
+      box-shadow: 0 2px 8px rgba(10, 29, 61, 0.08);
+      letter-spacing: 1px;
+      margin-top: 0.5rem;
+    }
+
+    @media (max-width: 768px) {
+      .coming-soon-section {
+        min-height: 50vh;
+        padding: 2rem 0 1rem 0;
+      }
+
+      .coming-soon-content {
+        padding: 1.2rem 0.7rem 1rem 0.7rem;
+        border-radius: 1.2rem;
+        max-width: 95vw;
+      }
+
+      .coming-soon-title {
+        font-size: 1.4rem;
+      }
+
+      .coming-soon-text {
+        font-size: 1rem;
+      }
+
+      .coming-soon-logo {
+        width: 50px;
+        height: 50px;
+      }
+
+      .coming-soon-badge {
+        font-size: 1rem;
+        padding: 0.5rem 1.1rem;
+      }
+    }
+  </style>
+
+    <!-- Section 8: Footer -->
+  <footer class="footer">
+    <div class="footer-container">
+      <!-- Brand Section -->
+      <div class="footer-brand">
+        <div class="brand-info">
+          <img src="assets/logo/Logo 3.png" alt="ProFile Logo" class="footer-logo" />
+          <h3 data-i18n="brand">ProFile</h3>
+          <p class="brand-slogan" data-i18n="footer_slogan">
+            "Everything.. starts with a profile."
+          </p>
+        </div>
+        <div class="social-links">
+          <a href="index.html#contact" class="social-link" aria-label="Email">
+            <i class="fa-solid fa-envelope"></i>
+          </a>
+          <a href="https://www.tiktok.com/@profile.dz" class="social-link" aria-label="TikTok">
+            <i class="fa-brands fa-tiktok"></i>
+          </a>
+          <a href="https://www.instagram.com/profile_dz_agency" class="social-link" aria-label="Instagram">
+            <i class="fa-brands fa-instagram"></i>
+          </a>
+          <a href="https://www.facebook.com/profile.php?id=61578142722578" class="social-link" aria-label="Facebook">
+            <i class="fa-brands fa-facebook"></i>
+          </a>
+        </div>
+      </div>
+
+      <!-- Links Section -->
+      <div class="footer-links">
+        <div class="link-group">
+          <h4 data-i18n="footer_company">Agency</h4>
+          <ul>
+            <li><a href="#about" data-i18n="nav_about">About</a></li>
+            <li><a href="#services" data-i18n="nav_services">Services</a></li>
+            <li><a href="#contact" data-i18n="nav_contact">Contact</a></li>
+          </ul>
+        </div>
+        <div class="link-group">
+          <h4 data-i18n="footer_services">Services</h4>
+          <ul>
+            <li>
+              <a href="#resume" data-i18n="footer_resume">Resume Writing</a>
+            </li>
+            <li>
+              <a href="#letter" data-i18n="footer_letter">Motivation Letters</a>
+            </li>
+            <li>
+              <a href="#linkedin" data-i18n="footer_linkedin">LinkedIn Makeover</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Newsletter Section -->
+      <div class="footer-newsletter">
+        <h4 data-i18n="footer_newsletter">Stay Updated</h4>
+        <p data-i18n="footer_newsletter_desc">
+          Get free tips and insights about career development and professional
+          growth.
+        </p>
+        <div class="newsletter-form">
+          <div class="input-group">
+            <input type="email" placeholder="Enter your email" class="newsletter-input" required
+              data-i18n-placeholder="footer_email_placeholder" />
+            <button type="submit" class="newsletter-btn">
+              <i class="fa-solid fa-paper-plane"></i>
+            </button>
+          </div>
+          <p class="privacy-note" data-i18n="footer_privacy">
+            We respect your privacy. Unsubscribe anytime.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Bottom Bar -->
+    <div class="footer-bottom">
+      <div class="footer-bottom-content">
+        <p data-i18n="footer_copyright">
+          &copy; 2025 ProFile. All rights reserved.
+        </p>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
