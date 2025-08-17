@@ -15,106 +15,6 @@
   <script src="https://cdn.jsdelivr.net/npm/alpinejs@3.13.3/dist/cdn.min.js" defer="defer"></script>
   <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
   <script src="scripts/main.js"></script>
-  <style>
-        .panel.pricing-table {
-          display: flex;
-          gap: 2rem;
-          justify-content: center;
-          flex-wrap: wrap;
-        }
-        .pricing-plan {
-          background: #fffbe6;
-          border-radius: 1.2rem;
-          box-shadow: 0 4px 24px rgba(10,29,61,0.10);
-          padding: 2.2rem 1.5rem 2.2rem 1.5rem;
-          display: flex;
-          flex-direction: column;
-          align-items: center;
-          min-width: 260px;
-          max-width: 320px;
-          flex: 1 1 260px;
-        }
-        .pricing-img {
-          width: 70px;
-          height: 70px;
-          margin-bottom: 1.2rem;
-        }
-        .pricing-header {
-          font-size: 1.5rem;
-          font-weight: 700;
-          color: #0a1d3d;
-          margin-bottom: 1rem;
-          text-align: center;
-        }
-        .pricing-features {
-          list-style: none;
-          padding: 0;
-          margin: 0 0 1.2rem 0;
-          min-height: 90px;
-          display: flex;
-          flex-direction: column;
-          justify-content: center;
-        }
-        .pricing-features-item {
-          font-size: 1rem;
-          color: #555;
-          margin-bottom: 0.5rem;
-          text-align: center;
-        }
-        .pricing-price {
-          font-size: 1.3rem;
-          color: #f5b800;
-          font-weight: 700;
-          margin-bottom: 1.2rem;
-          text-align: center;
-        }
-        .pricing-button {
-          display: inline-block;
-          background: #0a1d3d;
-          color: #fff;
-          font-weight: 600;
-          font-size: 1rem;
-          padding: 0.7rem 2.2rem;
-          border-radius: 2rem;
-          text-decoration: none;
-          transition: background 0.2s, color 0.2s;
-          margin-top: auto;
-          min-width: 140px;
-          text-align: center;
-        }
-        .pricing-button.is-featured {
-          background: #f5b800;
-          color: #0a1d3d;
-        }
-        @media (max-width: 900px) {
-          .panel.pricing-table {
-            gap: 1rem;
-          }
-          .pricing-plan {
-            min-width: 220px;
-            max-width: 95vw;
-            padding: 1.2rem 0.7rem 1.2rem 0.7rem;
-          }
-          .pricing-img {
-            width: 50px;
-            height: 50px;
-          }
-          .pricing-header {
-            font-size: 1.1rem;
-          }
-          .pricing-features {
-            min-height: 70px;
-          }
-          .pricing-price {
-            font-size: 1.1rem;
-          }
-          .pricing-button {
-            font-size: 0.97rem;
-            min-width: 110px;
-            padding: 0.6rem 1.2rem;
-          }
-        }
-      </style>
 </head>
 
 <body>
@@ -153,7 +53,7 @@
       <div class="hero-left">
         <img class="slogan slogan-desktop" src="assets/images/slogan.png" alt="ProFile Slogan" />
         <img class="slogan slogan-mobile" src="assets/images/slogan-mobile.png" alt="ProFile Slogan Mobile" />
-        <a class="cta" href="about.html" data-i18n="hero_cta">Learn More</a>
+        <a class="cta" href="#about" data-i18n="hero_cta">Learn More</a>
       </div>
       <div class="hero-right">
         <img class="illustration" src="assets/images/hero section illustration.svg" alt="ProFile Illustration" />
@@ -188,7 +88,7 @@
                 <div class="card-icons">
                   <img class="light-icon" src="assets/icons/letter.svg" alt="icon" />
                 </div>
-                <h3 data-i18n="card_letter_title">Motivation Letter</h3>
+                <h3 data-i18n="card_letter_title">Letters</h3>
                 <p data-i18n="card_letter_desc">
                   Make a strong impression with a personalized letter that
                   captures who you are and why you're the perfect fit. clear,
@@ -288,7 +188,7 @@
             <a class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
               x-on:click.prevent="active = 'aggregation'"
               :class="{'text-green-400 border-green-400': active === 'aggregation', 'text-gray-300 border-transparent': active !== 'aggregation'}"
-              href="#">Motivation Letters</a>
+              href="#">Letters</a>
           </li>
           <li>
             <a class="inline-block px-5 py-5 font-medium text-gray-300 tracking-tighter border border-transparent rounded-full transition duration-200"
@@ -297,10 +197,10 @@
               href="#">LinkedIn Profiles</a>
           </li>
         </ul>
-        <img class="mx-auto" :class="{ 'hidden': active != 'introduction' }" src="assets/images/slogan.png"
+        <img class="mx-auto" :class="{ 'hidden': active != 'introduction' }" src="assets/images/portfolio cv.png"
           alt="" /><img class="hidden mx-auto" :class="{ 'hidden': active != 'aggregation' }"
-          src="assets/images/slogan.png" alt="" /><img class="hidden mx-auto"
-          :class="{ 'hidden': active != 'integrations' }" src="assets/images/slogan.png" alt="" />
+          src="assets/images/Coming soon.png" alt="" /><img class="hidden mx-auto"
+          :class="{ 'hidden': active != 'integrations' }" src="assets/images/Coming soon.png" alt="" />
       </div>
     </section>
 
@@ -309,7 +209,7 @@
       <h2 class="section-title">About us</h2>
 
       <div class="about-container container grid">
-        <img src="assets/images/CV illustration.jpg" alt="" class="about-img">
+        <img src="assets/images/aboutUs.svg" alt="" class="about-img">
         <div class="about-data">
           <h3 class="about-heading">Your Career Story, Told So Well Recruiters Can’t Ignore It</h3>
           <p class="about-description">At ProFile, we don’t just format résumés — we reveal the version of you that recruiters can’t skip. Imagine your CV making an impact in the first 6 seconds. Imagine a cover letter that feels written for them but speaks about you. From your first internship to your dream scholarship, we craft profiles that don’t just list experiences — they spark opportunities.</p>
@@ -381,7 +281,7 @@
           <div class="panel pricing-table">
 
             <div class="pricing-plan">
-              <img src="https://s22.postimg.cc/8mv5gn7w1/paper-plane.png" alt="CV Pack" class="pricing-img">
+              <img src="assets/images/scholarshiphappy.svg" alt="CV Pack" class="pricing-img">
               <h2 class="pricing-header">Scholarship Pack</h2>
               <ul class="pricing-features">
                 <li class="pricing-features-item">Professional CV that stands out</li>
@@ -389,23 +289,23 @@
                 <li class="pricing-features-item">Recommendation Letter crafted for impact</li>
               </ul>
               <span class="pricing-price">1499 DA</span>
-              <a href="#/" class="pricing-button">Get Started</a>
+              <a href="#/" class="pricing-button">claim</a>
             </div>
 
             <div class="pricing-plan">
-              <img src="https://s28.postimg.cc/ju5bnc3x9/plane.png" alt="Job Pack" class="pricing-img">
+              <img src="assets/images/workhappy.svg" alt="Job Pack" class="pricing-img">
               <h2 class="pricing-header">Job Hunter Pack</h2>
               <ul class="pricing-features">
                 <li class="pricing-features-item">CV tailored for your dream job</li>
                 <li class="pricing-features-item">LinkedIn Profile Optimization for recruiters</li>
               </ul>
               <span class="pricing-price">1799 DA</span>
-              <a href="#/" class="pricing-button is-featured">Boost My Career</a>
+              <a href="#/" class="pricing-button is-featured">claim</a>
             </div>
 
             <div class="pricing-plan">
-              <img src="https://s21.postimg.cc/tpm0cge4n/space-ship.png" alt="Complete Pack" class="pricing-img">
-              <h2 class="pricing-header">Complete Success Pack</h2>
+              <img src="assets/images/completebox.svg" alt="Complete Pack" class="pricing-img">
+              <h2 class="pricing-header">Complete Pack</h2>
               <ul class="pricing-features">
                 <li class="pricing-features-item">CV that opens doors</li>
                 <li class="pricing-features-item">Motivation Letter that wins hearts</li>
@@ -413,7 +313,7 @@
                 <li class="pricing-features-item">LinkedIn Profile Optimization for global reach</li>
               </ul>
               <span class="pricing-price">1999 DA</span>
-              <a href="#/" class="pricing-button">Unlock Everything</a>
+              <a href="#/" class="pricing-button">claim</a>
             </div>
 
           </div>
@@ -507,16 +407,18 @@
           growth.
         </p>
         <div class="newsletter-form">
-          <div class="input-group">
-            <input type="email" placeholder="Enter your email" class="newsletter-input" required
-              data-i18n-placeholder="footer_email_placeholder" />
-            <button type="submit" class="newsletter-btn">
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </div>
-          <p class="privacy-note" data-i18n="footer_privacy">
-            We respect your privacy. Unsubscribe anytime.
-          </p>
+          <form id="newsletterForm" style="width:100%;max-width:400px;margin:0 auto;">
+            <div class="input-group">
+              <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" class="newsletter-input" required data-i18n-placeholder="footer_email_placeholder" />
+              <button type="submit" class="newsletter-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <p class="privacy-note" data-i18n="footer_privacy">
+              We respect your privacy. Unsubscribe anytime.
+            </p>
+            <div id="newsletter-success" style="display:none; text-align:center; margin-top:1rem; color:#0a1d3d; font-weight:600; font-size:1.1rem;">Thank you! You’re subscribed.</div>
+          </form>
         </div>
       </div>
     </div>

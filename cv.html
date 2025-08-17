@@ -57,46 +57,45 @@
   <section class="cv-categories-section" id="cv-categories" x-data="{
       active: 'category1',
       selectedTemplate: null,
-      prices: { category1: 150, category2: 250, category3: 200, category4: 300 },
       templatePrices: {
-        1: 150, 2: 180, 3: 250, 4: 270, 5: 200, 6: 220, 7: 300, 8: 320
+        1: 700, 2: 800, 3: 900, 4: 800, 5: 900, 6: 1000, 7: 900, 8: 1000, 9: 1100, 10: 1000, 11: 1100, 12: 1200
       },
       templates: {
         category1: [
-          { id: 1, img: 'assets/images/template1.jpg' },
-          { id: 2, img: 'assets/images/template2.jpg' },
-          { id: 9, img: 'assets/images/template9.jpg' }
+          { id: 1, img: 'assets/images/template 1.svg' },
+          { id: 2, img: 'assets/images/template 2.png' },
+          { id: 3, img: 'assets/images/template 3.svg' }
         ],
         category2: [
-          { id: 3, img: 'assets/images/template3.jpg' },
-          { id: 4, img: 'assets/images/template4.jpg' },
-          { id: 10, img: 'assets/images/template10.jpg' }
+          { id: 4, img: 'assets/images/template 1.svg' },
+          { id: 5, img: 'assets/images/template 2.png' },
+          { id: 6, img: 'assets/images/template 3.svg' }
         ],
         category3: [
-          { id: 5, img: 'assets/images/template5.jpg' },
-          { id: 6, img: 'assets/images/template6.jpg' },
-          { id: 11, img: 'assets/images/template11.jpg' }
+          { id: 7, img: 'assets/images/template 1.svg' },
+          { id: 8, img: 'assets/images/template 2.png' },
+          { id: 9, img: 'assets/images/template 3.svg' }
         ],
         category4: [
-          { id: 7, img: 'assets/images/template7.jpg' },
-          { id: 8, img: 'assets/images/template8.jpg' },
-          { id: 12, img: 'assets/images/template12.jpg' }
+          { id: 10, img: 'assets/images/template 1.svg' },
+          { id: 11, img: 'assets/images/template 2.png' },
+          { id: 12, img: 'assets/images/template 3.svg' }
         ]
       }
     }">
     <h2 class="section-title">Choose Your CV Category</h2>
     <ul class="cv-slider-tabs">
       <li>
-        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category1' }" x-on:click.prevent="active = 'category1'; selectedTemplate = null;">Student CV</a>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category1' }" x-on:click.prevent="active = 'category1'; selectedTemplate = null;">Scholarship</a>
       </li>
       <li>
-        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category2' }" x-on:click.prevent="active = 'category2'; selectedTemplate = null;">Professional CV</a>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category2' }" x-on:click.prevent="active = 'category2'; selectedTemplate = null;">Internship</a>
       </li>
       <li>
-        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category3' }" x-on:click.prevent="active = 'category3'; selectedTemplate = null;">Academic CV</a>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category3' }" x-on:click.prevent="active = 'category3'; selectedTemplate = null;">Job</a>
       </li>
       <li>
-        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category4' }" x-on:click.prevent="active = 'category4'; selectedTemplate = null;">Executive CV</a>
+        <a href="#" class="cv-tab-btn" :class="{ 'active': active === 'category4' }" x-on:click.prevent="active = 'category4'; selectedTemplate = null;">General</a>
       </li>
     </ul>
     <div class="cv-slider-content">
@@ -120,13 +119,62 @@
           <!-- Form -->
           <template x-if="selectedTemplate">
             <div class="cv-form-placeholder">
-              <!-- Embed your Google Form for this category here -->
-              <!-- Add a hidden field for template number -->
               <form>
                 <input type="hidden" name="template_id" :value="selectedTemplate">
-                <!-- ...embed Google Form fields here... -->
                 <div style="margin-bottom:1rem; color:#0a1d3d; font-weight:600;">Selected Template: <span x-text="selectedTemplate"></span></div>
-                <div style="color:#888;">[Google Form goes here]</div>
+                <template x-if="active === 'category1'">
+                  <div class="cv-google-form">
+<iframe 
+  src="https://docs.google.com/forms/d/e/1FAIpQLScUPCzxkFTrqks-t3RrdOHgNVrO0n9jiJpF9ZQzEURpD0cD5g/viewform?embedded=true" 
+  width="800" 
+  height="900" 
+  frameborder="0" 
+  marginheight="0" 
+  marginwidth="0" 
+  class="cv-google-iframe">
+  Loading…
+</iframe>
+                  </div>
+                </template>
+                <template x-if="active === 'category2'">
+                  <div class="cv-google-form">
+<iframe 
+  src="https://docs.google.com/forms/d/e/1FAIpQLSd05TJpi6K95D1m6vR9ZKFfVY6u1ua5TodkMXcd2iGfwjqNzw/viewform?embedded=true" 
+  width="800" 
+  height="900" 
+  frameborder="0" 
+  marginheight="0" 
+  marginwidth="0" 
+  class="cv-google-iframe">
+  Loading…
+</iframe>                  </div>
+                </template>
+                <template x-if="active === 'category3'">
+                  <div class="cv-google-form">
+<iframe 
+  src="https://docs.google.com/forms/d/e/1FAIpQLScd7grL76KhOxbdwoKGzbrB4TatoQOztDy7zf1-ov3WMCktug/viewform?embedded=true" 
+  width="800" 
+  height="900" 
+  frameborder="0" 
+  marginheight="0" 
+  marginwidth="0" 
+  class="cv-google-iframe">
+  Loading…
+</iframe>                  </div>
+                </template>
+                <template x-if="active === 'category4'">
+                  <div class="cv-google-form">
+<iframe 
+  src="https://docs.google.com/forms/d/e/1FAIpQLSc2rpaqH_PTLz6mkVw97Qxklc8pVaqoGglHuTaUvvsl_e78mA/viewform?embedded=true" 
+  width="800" 
+  height="900" 
+  frameborder="0" 
+  marginheight="0" 
+  marginwidth="0" 
+  class="cv-google-iframe">
+  Loading…
+</iframe>                  </div>
+                </template>
               </form>
             </div>
           </template>
@@ -142,22 +190,37 @@
       .cv-categories-section { padding: 3rem 0 2rem 0; background: #fff; }
       .cv-slider-container, .cv-categories-section { max-width: 900px; margin: 0 auto; background: #ffffffb3; border-radius: 1.5rem; box-shadow: 0 8px 32px rgba(10,29,61,0.10); padding: 2rem 2rem 1.5rem 2rem; }
       .cv-slider-tabs { display: flex; justify-content: center; gap: 1rem; margin-bottom: 2rem; flex-wrap: wrap; }
-      .cv-tab-btn { display: inline-block; padding: 0.7rem 1.2rem; border-radius: 2rem; background: #fff; color: #0a1d3d; font-weight: 600; font-size: 1rem; border: 2px solid #f5b800; transition: background 0.2s, color 0.2s, border 0.2s; }
+      .cv-tab-btn { display: inline-block; padding: 0.7rem 1.2rem; border-radius: 1rem; background: #fff; color: #0a1d3d; font-weight: 600; font-size: 1rem; border: 2px solid #f5b800; transition: background 0.2s, color 0.2s, border 0.2s; }
       .cv-tab-btn.active, .cv-tab-btn:hover { background: #f5b800; color: #0a1d3d; border-color: #0a1d3d; }
       .cv-slider-content { min-height: 420px; display: flex; align-items: center; justify-content: center; }
       .cv-form-slide { width: 100%; display: flex; flex-direction: column; align-items: center; justify-content: flex-start; }
       .cv-templates-preview { margin-bottom: 2rem; width: 100%; }
       .cv-templates-title { font-size: 1.1rem; color: #0a1d3d; font-weight: 600; margin-bottom: 1rem; text-align: center; }
-      .cv-templates-list { display: flex; gap: 2rem; justify-content: center; flex-wrap: wrap; }
-      .cv-template-card { background: #fffbe6; border: 2px dashed #f5b800; border-radius: 1rem; padding: 1.2rem; cursor: pointer; transition: box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; align-items: center; width: 200px; }
+      .cv-templates-list { display: flex; gap: 0.5rem; justify-content: center; flex-wrap:nowrap; }
+      .cv-template-card { background: #fffbe6; border: 2px dashed #f5b800; border-radius: 1rem; padding: 1.2rem; cursor: pointer; transition: box-shadow 0.2s, border-color 0.2s; display: flex; flex-direction: column; align-items: center; width: 270px; }
       .cv-template-card.selected { border-color: #0a1d3d; box-shadow: 0 4px 16px rgba(10,29,61,0.12); }
-      .cv-template-img { width: 160px; height: 220px; object-fit: cover; border-radius: 0.7rem; margin-bottom: 0.7rem; background: #eee; box-shadow: 0 2px 12px rgba(10,29,61,0.08); }
+      .cv-template-img { width: 240px; height: auto; object-fit: cover; border-radius: 0.7rem; margin-bottom: 0.7rem; background: #eee; box-shadow: 0 2px 12px rgba(10,29,61,0.08); }
       .cv-template-label { font-size: 1rem; color: #0a1d3d; font-weight: 500; }
       .cv-category-price { font-size: 1.1rem; color: #f5b800; font-weight: 700; margin-bottom: 1.5rem; text-align: center; }
-      .cv-form-placeholder { width: 100%; min-height: 120px; background: #fffbe6; border: 2px dashed #f5b800; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #0a1d3d; font-size: 1.1rem; font-weight: 600; text-align: center; margin-top: 1rem; }
+      .cv-form-placeholder { width: 100%; min-height: 120px; background: #fffbe6; border: 2px dashed #f5b800; border-radius: 1rem; display: flex; flex-direction: column; align-items: center; justify-content: center; color: #0a1d3d; font-size: 1.1rem; font-weight: 600; text-align: center; margin-top: 1rem; padding: 1.5rem 0.5rem; }
+      .cv-google-form { width: 100%; max-width: 900px; margin: 0 auto; }
+      .cv-google-iframe { width: 800; min-width: 100%; min-height: 700px; max-width: 900; border: none; border-radius: 0.7rem; background: #fff; box-shadow: 0 2px 12px rgba(10,29,61,0.08); }
+      @media (max-width: 1200px) {
+        .cv-google-form { max-width: 99vw; }
+        .cv-google-iframe { min-width: 0; max-width: 99vw; }
+      }
       @media (max-width: 900px) {
-        .cv-templates-list { gap: 1.2rem; }
-        .cv-template-card { width: 150px; padding: 1rem; }
+        .cv-google-form { max-width: 95vw; }
+        .cv-google-iframe { min-width: 0; min-height: 500px; max-width: 99vw; }
+      }
+      @media (max-width: 768px) {
+        .cv-form-placeholder { padding: 0.5rem 0.1rem; justify-content: center;}
+        .cv-google-form { max-width: 100%; padding: 0; justify-content: center;}
+        .cv-google-iframe { min-height: 350px; width: 120%; max-width: 100%; border-radius: 0.7rem; margin: auto;}
+      }
+      @media (max-width: 900px) {
+        .cv-templates-list { gap: 1.2rem; flex-wrap: wrap; }
+        .cv-template-card { width: 100%; padding: 1rem; }
         .cv-template-img { width: 110px; height: 150px; }
       }
       @media (max-width: 768px) {
@@ -165,9 +228,9 @@
         .cv-slider_tabs { gap: 0.5rem; flex-direction: column; align-items: center; flex-wrap: wrap; }
         .cv-tab-btn { width: 100%; font-size: 0.97rem; padding: 0.6rem 1rem; }
         .cv-slider-content { min-height: 220px; }
-        .cv-templates-list { gap: 0.7rem; }
-        .cv-template-card { width: 110px; padding: 0.7rem; }
-        .cv-template-img { width: 80px; height: 110px; }
+        .cv-templates-list { gap: 0.7rem; flex-wrap: wrap; justify-content: center; }
+        .cv-template-card { width: 350px; padding: 0.7rem; }
+        .cv-template-img { width: 300px; height: 450px; }
         .cv-form-placeholder { min-height: 80px; font-size: 1rem; }
       }
     </style>
@@ -236,16 +299,18 @@
           growth.
         </p>
         <div class="newsletter-form">
-          <div class="input-group">
-            <input type="email" placeholder="Enter your email" class="newsletter-input" required
-              data-i18n-placeholder="footer_email_placeholder" />
-            <button type="submit" class="newsletter-btn">
-              <i class="fa-solid fa-paper-plane"></i>
-            </button>
-          </div>
-          <p class="privacy-note" data-i18n="footer_privacy">
-            We respect your privacy. Unsubscribe anytime.
-          </p>
+          <form id="newsletterForm" style="width:100%;max-width:400px;margin:0 auto;">
+            <div class="input-group">
+              <input type="email" id="newsletterEmail" name="email" placeholder="Enter your email" class="newsletter-input" required data-i18n-placeholder="footer_email_placeholder" />
+              <button type="submit" class="newsletter-btn">
+                <i class="fa-solid fa-paper-plane"></i>
+              </button>
+            </div>
+            <p class="privacy-note" data-i18n="footer_privacy">
+              We respect your privacy. Unsubscribe anytime.
+            </p>
+            <div id="newsletter-success" style="display:none; text-align:center; margin-top:1rem; color:#0a1d3d; font-weight:600; font-size:1.1rem;">Thank you! You’re subscribed.</div>
+          </form>
         </div>
       </div>
     </div>
@@ -259,5 +324,29 @@
       </div>
     </div>
   </footer>
+  <script>
+        document.addEventListener('DOMContentLoaded', function () {
+          // Listen for Google Form submission
+          document.querySelectorAll('.cv-google-iframe').forEach(function(iframe) {
+            iframe.onload = function() {
+              // Listen for form submission inside iframe
+              iframe.contentWindow.addEventListener('submit', function() {
+                showOrderSuccess();
+              });
+            };
+          });
+          // Fallback for Google Forms: show message when redirected to 'formResponse'
+          window.addEventListener('message', function(event) {
+            if (event.data && typeof event.data === 'string' && event.data.includes('formResponse')) {
+              showOrderSuccess();
+            }
+          });
+        });
+        function showOrderSuccess() {
+          var msg = document.getElementById('cv-order-success');
+          if (msg) msg.style.display = 'block';
+        }
+      </script>
+      <div id="cv-order-success" style="display:none; text-align:center; margin-top:2rem; color:#0a1d3d; font-weight:700; font-size:1.3rem; background:#fffbe6; border:2px solid #f5b800; border-radius:1rem; padding:1.2rem;">Your order is done! Our team will reach you soon.</div>
 </body>
 </html>
